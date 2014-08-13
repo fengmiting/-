@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<style type="text/css">
+		#storesInAddPostBox .lineBox{width:80px;}
+		#storesInAddPostBox .ui-input-text{margin:3px 0px;}
+		.storesInAddTd{text-align: center; background-color:#f8f9f9;}
+		.th .storesInAddTd{background-color: #BEBEBE;}
+		.storesInAddTd .lineBox{width:98%;}
+	</style>
+	<link href="css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		uiOPT();
+	</script>
+
+	<div class="toolBar">
+		<a class="toolBar-a" id="storesInAddSaveButton">确认入库</a>
+		<a class="toolBar-a goBack"><span>« </span>返回</a>
+	</div>
+
+	<div id='storesInAddPostBox'>
+	<div class="searchBox">
+		总数：<div class="lineBox"><input type="text" value="0" readonly="readonly" id="counts" class="post-data glb-text" /></div>
+	</div>
+	</div>
+
+	<div id="storesInAddscrollBox" class="scrollBox" style="padding:20px 8px; overflow:hidden;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td class="storesInAddTd" style="width:32px;">序号</td>
+				<td class="storesInAddTd" style="width:140px;">货品</td>
+				<td class="storesInAddTd" style="width:60px;">颜色</td>
+				<td class="storesInAddTd" style="width:60px;">尺码</td>
+				<td class="storesInAddTd" style="width:60px;">数量</td>
+			</tr>
+		</table>
+
+		<div id="storesInAddscrollBoxA" style="position: relative;">
+		<div style="padding-bottom:300px;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">1<input type="hidden" value="1" postInput="number" />
+
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">2<input type="hidden" value="2" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">3<input type="hidden" value="3" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">4<input type="hidden" value="4" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">5<input type="hidden" value="5" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">6<input type="hidden" value="6" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">7<input type="hidden" value="7" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">8<input type="hidden" value="8" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">9<input type="hidden" value="9" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">10<input type="hidden" value="10" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">11<input type="hidden" value="11" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="storesInAddTd" style="width:32px;text-align: center;">12<input type="hidden" value="12" postInput="number" />
+				</td>
+				<td class="storesInAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesInAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" readonly="readonly" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				
+			</tr>
+		</table>
+		</div>
+		</div>
+	</div>
+
+<!--DropDownList控件-->
+<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+
+<!--设置UI-->
+<script type="text/javascript">
+	$(function(){
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 3) - 20;
+			$("#storesInAddscrollBoxA").height(CXT_HEIGHT);
+		}
+		resize();
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+
+		//数据块可以移动
+		var storesInAddpScroll;
+		setTimeout(function(){
+			storesInAddpScroll = new iScroll('storesInAddscrollBoxA');
+			storesInAddpScroll.refresh();
+		},100);
+
+		$(document).bind( "pageshow", function( event, prevPage){
+			if(storesInAddpScroll !== undefined){
+				storesInAddpScroll.refresh();
+			}
+		});
+
+
+		// 返回
+		$(".goBack").tap(function(){
+		    window.history.back();
+		    return false;
+		});
+	});
+</script>
+
+<!--数据绑定-->
+<script type="text/javascript">
+	var FormsModel = undefined
+		DataList   = undefined;
+
+	$(function(){
+		var dataBind = function(){
+			$.mobile.loading('show');
+			$.get(SERVER + 'StoresForms/GetIdByList?token='+ TOKEN +'&id=' + $.Request('id'),function(data){
+				var result = eval("("+data+")");
+				if(result.Status == 'ERROR'){
+					alert('错误',result.Message);
+					return;
+				}
+
+				var formsModel = result.Result;
+				FormsModel 	   = formsModel;
+
+				$('#storesInAddPostBox #counts').val(formsModel.counts);
+				$.get(SERVER + 'Stores/GetFormsIdByList?token=' + TOKEN + '&id=' + formsModel.id,function(data){
+					var result = eval("("+ data +")");
+					if(result.Status == 'ERROR'){
+						alert('错误',result.Message);
+						return;
+					}
+
+					var list 	= result.Result;
+					DataList 	= list;
+
+					$('#storesInAddscrollBoxA').find('input[postInput="number"]').each(function(){
+						var val = $(this).val();
+						var tr  = $(this).parent().parent();
+
+						for(var i in list){
+							if(list[i].number == val){
+								tr.find('input[postInput="product"]').val(list[i].product);
+								tr.find('input[postInput="color"]').val(list[i].color);
+								tr.find('input[postInput="size"]').val(list[i].size);
+								tr.find('input[postInput="counts"]').val(list[i].counts);
+							}
+						}
+					});
+				});
+			});
+		}
+
+		setTimeout(function(){
+			dataBind();
+		},1000);
+	});
+</script>
+
+<!--数据提交-->
+<script type="text/javascript">
+	$(function(){
+		$('#storesInAddSaveButton').tap(function(){
+			if(FormsModel === undefined || DataList === undefined){
+				alert('错误','数据还未加载完毕，请稍等..');
+				return false;
+			}
+			$.mobile.loading('show');
+			FormsModel.recver = USERS.name;
+			$.ajax({url: SERVER + "StoresForms/PushDepotForms?token=" + TOKEN,
+				data: FormsModel,
+				type: 'post',
+				success: function(data){
+					var rst = eval("("+ data +")");
+					$.mobile.loading('hide');
+					if(rst.Status == 'ERROR'){
+						alert('错误',rst.Message);
+						return;
+					}
+					alert('成功','接收调入成功');
+					$.mobile.changePage('storesInAllocation.html');
+				}
+			});
+
+		});
+	});
+</script>
+</body>
+</html>

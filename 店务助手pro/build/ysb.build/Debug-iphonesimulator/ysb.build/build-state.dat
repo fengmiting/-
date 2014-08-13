@@ -1,0 +1,742 @@
+Tysb
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/tsou/Documents/demo/build/ysb.app/Info.plist /Users/tsou/Documents/demo/ysb/ysb-Info.plist
+cPhaseScriptExecution Copy\ www\ directory /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Script-304B58A110DAC018002A0835.sh
+cCpResource ysb/config.xml build/ysb.app/config.xml
+cCpResource ysb/Resources/icons/icon-72.png build/ysb.app/icon-72.png
+cCpResource ysb/Resources/icons/icon.png build/ysb.app/icon.png
+cCpResource ysb/Resources/icons/icon@2x.png build/ysb.app/icon@2x.png
+cCpResource ysb/Resources/Capture.bundle build/ysb.app/Capture.bundle
+cCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/en.lproj/Localizable.strings ysb/Resources/en.lproj/Localizable.strings
+cCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/es.lproj/Localizable.strings ysb/Resources/es.lproj/Localizable.strings
+cCompileXIB /Users/tsou/Documents/demo/ysb/Classes/MainViewController.xib
+cCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/de.lproj/Localizable.strings ysb/Resources/de.lproj/Localizable.strings
+cCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/se.lproj/Localizable.strings ysb/Resources/se.lproj/Localizable.strings
+cCpResource ysb/Resources/splash/Default-Landscape@2x~ipad.png build/ysb.app/Default-Landscape@2x~ipad.png
+cCpResource ysb/Resources/splash/Default-Landscape~ipad.png build/ysb.app/Default-Landscape~ipad.png
+cCpResource ysb/Resources/splash/Default-Portrait@2x~ipad.png build/ysb.app/Default-Portrait@2x~ipad.png
+cCpResource ysb/Resources/splash/Default-Portrait~ipad.png build/ysb.app/Default-Portrait~ipad.png
+cCpResource ysb/Resources/splash/Default@2x~iphone.png build/ysb.app/Default@2x~iphone.png
+cCpResource ysb/Resources/splash/Default~iphone.png build/ysb.app/Default~iphone.png
+cCpResource ysb/Resources/splash/Default-568h@2x~iphone.png build/ysb.app/Default-568h@2x~iphone.png
+cProcessPCH /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.pch ysb/ysb-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o /Users/tsou/Documents/demo/ysb/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o /Users/tsou/Documents/demo/ysb/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/tsou/Documents/demo/build/ysb.app/ysb normal i386
+cGenerateDSYMFile /Users/tsou/Documents/demo/build/ysb.app.dSYM /Users/tsou/Documents/demo/build/ysb.app/ysb
+cTouch /Users/tsou/Documents/demo/build/ysb.app
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+c00000000521BCCE50000000000000176
+t1377553637
+s374
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
+c00000000522ACC8F00000000000003B5
+t1378536591
+s949
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000522ACCD2000000000000019E
+t1378536658
+s414
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c00000000522ACCDC000000000047C8A0
+t1378536668
+s4704416
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
+c00000000522ACCE10000000000191F30
+t1378536673
+s1646384
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+c00000000522ACCE400000000004F2C80
+t1378536676
+s5188736
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
+c00000000522ACCE60000000000057080
+t1378536678
+s356480
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c00000000522ACCE70000000000902E30
+t1378536679
+s9449008
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c00000000522ACCEC0000000000583810
+t1378536684
+s5781520
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000522ACCEE0000000000445830
+t1378536686
+s4479024
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c00000000522ACCEF00000000000EC820
+t1378536687
+s968736
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+c00000000522ACCF10000000000133B60
+t1378536689
+s1260384
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000522ACCFA000000000088B570
+t1378536698
+s8959344
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+c00000000522ACD0B0000000000714B70
+t1378536715
+s7424880
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+c00000000522ACD0F00000000001BA500
+t1378536719
+s1811712
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c00000000522ACD120000000000484860
+t1378536722
+s4737120
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c00000000522ACD1B00000000001081B0
+t1378536731
+s1081776
+
+N/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000522ACD200000000001DB1C90
+t1378536736
+s31136912
+
+N/Users/tsou/Documents/demo/build/libCordova.a
+c00000000530B0012000000000029E4E8
+t1393229842
+s2745576
+
+N/Users/tsou/Documents/demo/build/ysb.app
+t1393229852
+s748
+
+N/Users/tsou/Documents/demo/build/ysb.app.dSYM
+t2
+s0
+
+N/Users/tsou/Documents/demo/build/ysb.app/Capture.bundle
+t1393229842
+s782
+
+N/Users/tsou/Documents/demo/build/ysb.app/Default-568h@2x~iphone.png
+t1393229842
+s29944
+
+N/Users/tsou/Documents/demo/build/ysb.app/Default-Landscape@2x~ipad.png
+t1393229842
+s75573
+
+N/Users/tsou/Documents/demo/build/ysb.app/Default-Landscape~ipad.png
+t1393229842
+s33147
+
+N/Users/tsou/Documents/demo/build/ysb.app/Default-Portrait@2x~ipad.png
+t1393229842
+s74097
+
+N/Users/tsou/Documents/demo/build/ysb.app/Default-Portrait~ipad.png
+t1393229842
+s32666
+
+N/Users/tsou/Documents/demo/build/ysb.app/Default@2x~iphone.png
+t1393229842
+s29475
+
+N/Users/tsou/Documents/demo/build/ysb.app/Default~iphone.png
+t1393229842
+s10394
+
+N/Users/tsou/Documents/demo/build/ysb.app/Info.plist
+t1393229842
+s1055
+
+N/Users/tsou/Documents/demo/build/ysb.app/MainViewController.nib
+t1393229851
+s1332
+
+N/Users/tsou/Documents/demo/build/ysb.app/PkgInfo
+t2
+s0
+
+N/Users/tsou/Documents/demo/build/ysb.app/config.xml
+t1393229842
+s2835
+
+N/Users/tsou/Documents/demo/build/ysb.app/de.lproj/Localizable.strings
+t1393229842
+s256
+
+N/Users/tsou/Documents/demo/build/ysb.app/en.lproj/Localizable.strings
+t1393229842
+s142
+
+N/Users/tsou/Documents/demo/build/ysb.app/es.lproj/Localizable.strings
+t1393229842
+s308
+
+N/Users/tsou/Documents/demo/build/ysb.app/icon-72.png
+t1393229842
+s4944
+
+N/Users/tsou/Documents/demo/build/ysb.app/icon.png
+t1393229842
+s3902
+
+N/Users/tsou/Documents/demo/build/ysb.app/icon@2x.png
+t1393229842
+s7869
+
+N/Users/tsou/Documents/demo/build/ysb.app/se.lproj/Localizable.strings
+t1393229842
+s259
+
+N/Users/tsou/Documents/demo/build/ysb.app/ysb
+t1393229852
+s824628
+
+N/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o
+t1393229851
+s76176
+
+N/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o
+t1393229851
+s52592
+
+N/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o
+t1393229851
+s3000
+
+N/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/ysb.LinkFileList
+c00000000530B00120000000000000147
+t1393229842
+s327
+
+N/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Script-304B58A110DAC018002A0835.sh
+c00000000530B0012000000000000042B
+t1393229842
+s1067
+
+N/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m
+c00000000530AFFDF000000000000121E
+t1393229791
+s4638
+
+N/Users/tsou/Documents/demo/ysb/Classes/MainViewController.m
+c00000000530AFFDF0000000000001264
+t1393229791
+s4708
+
+N/Users/tsou/Documents/demo/ysb/Classes/MainViewController.xib
+c00000000530AFFDF0000000000001759
+t1393229791
+s5977
+
+N/Users/tsou/Documents/demo/ysb/Resources/Capture.bundle
+c00000000530AFFDF000000000000030E
+t1393229791
+s782
+
+N/Users/tsou/Documents/demo/ysb/Resources/de.lproj/Localizable.strings
+c00000000530AFFDF0000000000000485
+t1393229791
+s1157
+
+N/Users/tsou/Documents/demo/ysb/Resources/en.lproj/Localizable.strings
+c00000000530AFFDF0000000000000470
+t1393229791
+s1136
+
+N/Users/tsou/Documents/demo/ysb/Resources/es.lproj/Localizable.strings
+c00000000530AFFDF000000000000047D
+t1393229791
+s1149
+
+N/Users/tsou/Documents/demo/ysb/Resources/icons/icon-72.png
+c00000000530AFFDF0000000000001350
+t1393229791
+s4944
+
+N/Users/tsou/Documents/demo/ysb/Resources/icons/icon.png
+c00000000530AFFDF0000000000000F3E
+t1393229791
+s3902
+
+N/Users/tsou/Documents/demo/ysb/Resources/icons/icon@2x.png
+c00000000530AFFDF0000000000001EBD
+t1393229791
+s7869
+
+N/Users/tsou/Documents/demo/ysb/Resources/se.lproj/Localizable.strings
+c00000000530AFFDF0000000000000471
+t1393229791
+s1137
+
+N/Users/tsou/Documents/demo/ysb/Resources/splash/Default-568h@2x~iphone.png
+c00000000530AFFDF00000000000074F8
+t1393229791
+s29944
+
+N/Users/tsou/Documents/demo/ysb/Resources/splash/Default-Landscape@2x~ipad.png
+c00000000530AFFDF0000000000012735
+t1393229791
+s75573
+
+N/Users/tsou/Documents/demo/ysb/Resources/splash/Default-Landscape~ipad.png
+c00000000530AFFDF000000000000817B
+t1393229791
+s33147
+
+N/Users/tsou/Documents/demo/ysb/Resources/splash/Default-Portrait@2x~ipad.png
+c00000000530AFFDF0000000000012171
+t1393229791
+s74097
+
+N/Users/tsou/Documents/demo/ysb/Resources/splash/Default-Portrait~ipad.png
+c00000000530AFFDF0000000000007F9A
+t1393229791
+s32666
+
+N/Users/tsou/Documents/demo/ysb/Resources/splash/Default@2x~iphone.png
+c00000000530AFFDF0000000000007323
+t1393229791
+s29475
+
+N/Users/tsou/Documents/demo/ysb/Resources/splash/Default~iphone.png
+c00000000530AFFDF000000000000289A
+t1393229791
+s10394
+
+N/Users/tsou/Documents/demo/ysb/config.xml
+c00000000530AFFDF0000000000000B13
+t1393229791
+s2835
+
+N/Users/tsou/Documents/demo/ysb/main.m
+c00000000530AFFDF0000000000000455
+t1393229791
+s1109
+
+N/Users/tsou/Documents/demo/ysb/ysb-Info.plist
+c00000000530AFFDF00000000000009C4
+t1393229791
+s2500
+
+N/Users/tsou/Documents/demo/ysb/ysb-Prefix.pch
+c00000000530AFFDF00000000000003B7
+t1393229791
+s951
+
+N/var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.pch
+t1393229851
+s5334812
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesa985529237bbb841^37e0539237bbb841^---0#1#1#--18"Check dependencies36"55EF0AD0-6BA5-411E-B271-ABEB51F972D7-
+
+CCompileC build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s414922651.872413
+e414922651.933231
+r1
+xCompileC
+xbuild/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o
+x/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m
+d/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVViewController.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVAvailability.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVInvokedUrlCommand.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVCommandDelegate.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVWhitelist.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVScreenOrientationDelegate.h
+d/Users/tsou/Documents/demo/ysb/Classes/MainViewController.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVCommandDelegateImpl.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVCommandQueue.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVPlugin.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVPluginResult.h
+d/Users/tsou/Documents/demo/build/include/Cordova/NSMutableArray+QueueAdditions.h
+o[1m/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m:68:25: [0m[0;1;35mwarning: [0m[1m
+o      'useSplashScreen' is deprecated: Deprecated in Cordova 2.5. Add/Remove the
+o      SplashScreen plugin instead of setting this property.
+o      [-Wdeprecated-declarations][0m
+o    self.viewController.useSplashScreen = YES;
+o[0;1;32m                        ^
+o[0mIn file included from /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m:28:
+oIn file included from /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.h:30:
+o[1m/Users/tsou/Documents/demo/build/include/Cordova/CDVViewController.h:47:47: [0m[0;1;30mnote: [0m
+o      'useSplashScreen' declared here[0m
+o@property (nonatomic, readwrite, assign) BOOL useSplashScreen CDV_DEPREC...
+o[0;1;32m                                              ^
+o[0m1 warning generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Compile /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m200"[1mCompileC[0m build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o [1mysb/Classes/AppDelegate.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler726edf9b37bbb841^d5e7ee9b37bbb841^-822"[1m/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m:68:25: [0m[0;1;35mwarning: [0m[1m      'useSplashScreen' is deprecated: Deprecated in Cordova 2.5. Add/Remove the      SplashScreen plugin instead of setting this property.      [-Wdeprecated-declarations][0m    self.viewController.useSplashScreen = YES;[0;1;32m                        ^[0mIn file included from /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m:28:In file included from /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.h:30:[1m/Users/tsou/Documents/demo/build/include/Cordova/CDVViewController.h:47:47: [0m[0;1;30mnote: [0m      'useSplashScreen' declared here[0m@property (nonatomic, readwrite, assign) BOOL useSplashScreen CDV_DEPREC...[0;1;32m                                              ^[0m1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@128"'useSplashScreen' is deprecated: Deprecated in Cordova 2.5. Add/Remove the SplashScreen plugin instead of setting this property.-414922651#18446744073709551615#0#1(2@31"'useSplashScreen' declared here-414922651#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@81"file://localhost/Users/tsou/Documents/demo/CordovaLib/Classes/CDVViewController.h0000000000000000^46#46#46#46#1832#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@68"file://localhost/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m0000000000000000^67#24#67#24#2260#0#12"Deprecations--0#0#1#-19%DVTDocumentLocation4@68"file://localhost/Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m0000000000000000^3189"[1mCompileC[0m build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o [1mysb/Classes/AppDelegate.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tsou/Documents/demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode\ 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-generated-files.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-own-target-headers.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-all-target-headers.hmap -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-project-headers.hmap -I/Users/tsou/Documents/demo/build/include -I/Users/tsou/Documents/demo/build/usr/local/lib/include -I/Users/tsou/Documents/demo/build/UninstalledProducts/include -I/Users/tsou/Documents/demo/build -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources/i386 -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources -F/Users/tsou/Documents/demo/build -include /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch -MMD -MT dependencies -MF /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.dia -c /Users/tsou/Documents/demo/ysb/Classes/AppDelegate.m -o /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o36"8521947D-AE55-49DA-A6DA-1344358228BB-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCompileC build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o /Users/tsou/Documents/demo/ysb/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s414922651.872407
+e414922651.923041
+r1
+xCompileC
+xbuild/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o
+x/Users/tsou/Documents/demo/ysb/Classes/MainViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/tsou/Documents/demo/ysb/Classes/MainViewController.m
+d/Users/tsou/Documents/demo/ysb/Classes/MainViewController.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVViewController.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVAvailability.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVInvokedUrlCommand.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVCommandDelegate.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVWhitelist.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVScreenOrientationDelegate.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVCommandDelegateImpl.h
+d/Users/tsou/Documents/demo/build/include/Cordova/CDVCommandQueue.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/tsou/Documents/demo/ysb/Classes/MainViewController.m214"[1mCompileC[0m build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o [1mysb/Classes/MainViewController.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler0075df9b37bbb841^8c4cec9b37bbb841^---0#0#1#-19%DVTDocumentLocation2@75"file://localhost/Users/tsou/Documents/demo/ysb/Classes/MainViewController.m0000000000000000^3231"[1mCompileC[0m build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o [1mysb/Classes/MainViewController.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tsou/Documents/demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode\ 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-generated-files.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-own-target-headers.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-all-target-headers.hmap -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-project-headers.hmap -I/Users/tsou/Documents/demo/build/include -I/Users/tsou/Documents/demo/build/usr/local/lib/include -I/Users/tsou/Documents/demo/build/UninstalledProducts/include -I/Users/tsou/Documents/demo/build -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources/i386 -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources -F/Users/tsou/Documents/demo/build -include /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch -MMD -MT dependencies -MF /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.d --serialize-diagnostics /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.dia -c /Users/tsou/Documents/demo/ysb/Classes/MainViewController.m -o /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o36"49745EDF-E5F6-4709-9E92-CC17E4331C1C-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCompileC build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o /Users/tsou/Documents/demo/ysb/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s414922651.872411
+e414922651.893560
+r1
+xCompileC
+xbuild/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o
+x/Users/tsou/Documents/demo/ysb/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/tsou/Documents/demo/ysb/main.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Compile /Users/tsou/Documents/demo/ysb/main.m178"[1mCompileC[0m build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o [1mysb/main.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler506edf9b37bbb841^adc0e49b37bbb841^---0#0#1#-19%DVTDocumentLocation2@53"file://localhost/Users/tsou/Documents/demo/ysb/main.m0000000000000000^3131"[1mCompileC[0m build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o [1mysb/main.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tsou/Documents/demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode\ 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-generated-files.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-own-target-headers.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-all-target-headers.hmap -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-project-headers.hmap -I/Users/tsou/Documents/demo/build/include -I/Users/tsou/Documents/demo/build/usr/local/lib/include -I/Users/tsou/Documents/demo/build/UninstalledProducts/include -I/Users/tsou/Documents/demo/build -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources/i386 -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources -F/Users/tsou/Documents/demo/build -include /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch -MMD -MT dependencies -MF /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.dia -c /Users/tsou/Documents/demo/ysb/main.m -o /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o36"3AED1429-60CC-4680-8552-9618359637CD-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCompileXIB /Users/tsou/Documents/demo/ysb/Classes/MainViewController.xib
+s414922642.493364
+e414922651.561847
+r1
+xCompileXIB
+x/Users/tsou/Documents/demo/ysb/Classes/MainViewController.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Compiling /Users/tsou/Documents/demo/ysb/Classes/MainViewController.xib61"[1mCompileXIB[0m [1mysb/Classes/MainViewController.xib[0m035e7e9237bbb841^aed88f9b37bbb841^---0#0#1#-19%DVTDocumentLocation2@77"file://localhost/Users/tsou/Documents/demo/ysb/Classes/MainViewController.xib0000000000000000^748"[1mCompileXIB[0m [1mysb/Classes/MainViewController.xib[0m    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    setenv XCODE_DEVELOPER_USR_PATH "/Applications/Xcode 2.app/Contents/Developer/usr/bin/.."    /Applications/Xcode\ 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 5.0 --output-format human-readable-text --compile /Users/tsou/Documents/demo/build/ysb.app/MainViewController.nib /Users/tsou/Documents/demo/ysb/Classes/MainViewController.xib36"A1329213-A786-4AEF-99E1-6E268862C70D-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/de.lproj/Localizable.strings ysb/Resources/de.lproj/Localizable.strings
+s414922642.500093
+e414922642.558326
+r1
+xCopyStringsFile
+x/Users/tsou/Documents/demo/build/ysb.app/de.lproj/Localizable.strings
+xysb/Resources/de.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy ysb/Resources/de.lproj/Localizable.strings109"[1mCopyStringsFile[0m build/ysb.app/de.lproj/Localizable.strings ysb/Resources/de.lproj/Localizable.strings3716809237bbb841^56f18e9237bbb841^---0#0#1#-19%DVTDocumentLocation2@85"file://localhost/Users/tsou/Documents/demo/ysb/Resources/de.lproj/Localizable.strings0000000000000000^544"[1mCopyStringsFile[0m build/ysb.app/de.lproj/Localizable.strings ysb/Resources/de.lproj/Localizable.strings    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tsou/Documents/demo/build/ysb.app/de.lproj -- ysb/Resources/de.lproj/Localizable.strings36"46C203D5-1869-4D94-A942-AA0D3CBB9D11-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/en.lproj/Localizable.strings ysb/Resources/en.lproj/Localizable.strings
+s414922642.490264
+e414922642.501423
+r1
+xCopyStringsFile
+x/Users/tsou/Documents/demo/build/ysb.app/en.lproj/Localizable.strings
+xysb/Resources/en.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy ysb/Resources/en.lproj/Localizable.strings109"[1mCopyStringsFile[0m build/ysb.app/en.lproj/Localizable.strings ysb/Resources/en.lproj/Localizable.strings3e937d9237bbb841^d95d809237bbb841^---0#0#1#-19%DVTDocumentLocation2@85"file://localhost/Users/tsou/Documents/demo/ysb/Resources/en.lproj/Localizable.strings0000000000000000^544"[1mCopyStringsFile[0m build/ysb.app/en.lproj/Localizable.strings ysb/Resources/en.lproj/Localizable.strings    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tsou/Documents/demo/build/ysb.app/en.lproj -- ysb/Resources/en.lproj/Localizable.strings36"46B7763B-7373-4C8E-BC5D-C0C9FAC052D6-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/es.lproj/Localizable.strings ysb/Resources/es.lproj/Localizable.strings
+s414922642.492385
+e414922642.505185
+r1
+xCopyStringsFile
+x/Users/tsou/Documents/demo/build/ysb.app/es.lproj/Localizable.strings
+xysb/Resources/es.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy ysb/Resources/es.lproj/Localizable.strings109"[1mCopyStringsFile[0m build/ysb.app/es.lproj/Localizable.strings ysb/Resources/es.lproj/Localizable.stringsc11b7e9237bbb841^5454819237bbb841^---0#0#1#-19%DVTDocumentLocation2@85"file://localhost/Users/tsou/Documents/demo/ysb/Resources/es.lproj/Localizable.strings0000000000000000^544"[1mCopyStringsFile[0m build/ysb.app/es.lproj/Localizable.strings ysb/Resources/es.lproj/Localizable.strings    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tsou/Documents/demo/build/ysb.app/es.lproj -- ysb/Resources/es.lproj/Localizable.strings36"8F484F4B-ADD4-447E-83B1-FBD1E95B0181-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCopyStringsFile /Users/tsou/Documents/demo/build/ysb.app/se.lproj/Localizable.strings ysb/Resources/se.lproj/Localizable.strings
+s414922642.502729
+e414922642.558531
+r1
+xCopyStringsFile
+x/Users/tsou/Documents/demo/build/ysb.app/se.lproj/Localizable.strings
+xysb/Resources/se.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy ysb/Resources/se.lproj/Localizable.strings109"[1mCopyStringsFile[0m build/ysb.app/se.lproj/Localizable.strings ysb/Resources/se.lproj/Localizable.strings9cc0809237bbb841^59fc8e9237bbb841^---0#0#1#-19%DVTDocumentLocation2@85"file://localhost/Users/tsou/Documents/demo/ysb/Resources/se.lproj/Localizable.strings0000000000000000^544"[1mCopyStringsFile[0m build/ysb.app/se.lproj/Localizable.strings ysb/Resources/se.lproj/Localizable.strings    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tsou/Documents/demo/build/ysb.app/se.lproj -- ysb/Resources/se.lproj/Localizable.strings36"AA48DE28-E9C0-4769-8067-598D0B8D8A78-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/Capture.bundle build/ysb.app/Capture.bundle
+s414922642.490148
+e414922642.498828
+r1
+xCpResource
+xysb/Resources/Capture.bundle
+xbuild/ysb.app/Capture.bundle
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection33"Copy build/ysb.app/Capture.bundle76"[1mCpResource[0m ysb/Resources/Capture.bundle build/ysb.app/Capture.bundle9c897d9237bbb841^eab37f9237bbb841^---0#0#1#-19%DVTDocumentLocation2@71"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Capture.bundle003844e5dfffdf42^534"[1mCpResource[0m ysb/Resources/Capture.bundle build/ysb.app/Capture.bundle    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/Capture.bundle /Users/tsou/Documents/demo/build/ysb.app36"E6D040E4-647C-4487-B83D-98FECC25B982-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/icons/icon-72.png build/ysb.app/icon-72.png
+s414922642.486779
+e414922642.491063
+r1
+xCpResource
+xysb/Resources/icons/icon-72.png
+xbuild/ysb.app/icon-72.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection30"Copy build/ysb.app/icon-72.png76"[1mCpResource[0m ysb/Resources/icons/icon-72.png build/ysb.app/icon-72.pngc8b67c9237bbb841^f6b67d9237bbb841^---0#0#1#-19%DVTDocumentLocation2@68"file://localhost/Users/tsou/Documents/demo/build/ysb.app/icon-72.png003844e5dfffdf42^537"[1mCpResource[0m ysb/Resources/icons/icon-72.png build/ysb.app/icon-72.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/icons/icon-72.png /Users/tsou/Documents/demo/build/ysb.app36"592B3759-4AA6-4A3B-A778-1F34698821D0-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/icons/icon.png build/ysb.app/icon.png
+s414922642.486813
+e414922642.489965
+r1
+xCpResource
+xysb/Resources/icons/icon.png
+xbuild/ysb.app/icon.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection27"Copy build/ysb.app/icon.png70"[1mCpResource[0m ysb/Resources/icons/icon.png build/ysb.app/icon.png86ae7c9237bbb841^ce6e7d9237bbb841^---0#0#1#-19%DVTDocumentLocation2@65"file://localhost/Users/tsou/Documents/demo/build/ysb.app/icon.png003844e5dfffdf42^528"[1mCpResource[0m ysb/Resources/icons/icon.png build/ysb.app/icon.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/icons/icon.png /Users/tsou/Documents/demo/build/ysb.app36"02019CD7-2BBF-4F22-829F-76EC21CC9FF3-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/icons/icon@2x.png build/ysb.app/icon@2x.png
+s414922642.487253
+e414922642.492189
+r1
+xCpResource
+xysb/Resources/icons/icon@2x.png
+xbuild/ysb.app/icon@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection30"Copy build/ysb.app/icon@2x.png76"[1mCpResource[0m ysb/Resources/icons/icon@2x.png build/ysb.app/icon@2x.png86c97c9237bbb841^8f007e9237bbb841^---0#0#1#-19%DVTDocumentLocation2@68"file://localhost/Users/tsou/Documents/demo/build/ysb.app/icon@2x.png003844e5dfffdf42^537"[1mCpResource[0m ysb/Resources/icons/icon@2x.png build/ysb.app/icon@2x.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/icons/icon@2x.png /Users/tsou/Documents/demo/build/ysb.app36"932749CF-37A7-426F-9DFA-DFAB2BBD75D5-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/splash/Default-568h@2x~iphone.png build/ysb.app/Default-568h@2x~iphone.png
+s414922642.526305
+e414922642.528151
+r1
+xCpResource
+xysb/Resources/splash/Default-568h@2x~iphone.png
+xbuild/ysb.app/Default-568h@2x~iphone.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Copy build/ysb.app/Default-568h@2x~iphone.png107"[1mCpResource[0m ysb/Resources/splash/Default-568h@2x~iphone.png build/ysb.app/Default-568h@2x~iphone.pngc1c9869237bbb841^4034879237bbb841^---0#0#1#-19%DVTDocumentLocation2@83"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Default-568h@2x~iphone.png003844e5dfffdf42^584"[1mCpResource[0m ysb/Resources/splash/Default-568h@2x~iphone.png build/ysb.app/Default-568h@2x~iphone.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/splash/Default-568h@2x~iphone.png /Users/tsou/Documents/demo/build/ysb.app36"90324740-D429-4677-8D9A-CC565DA81C25-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/splash/Default-Landscape@2x~ipad.png build/ysb.app/Default-Landscape@2x~ipad.png
+s414922642.506604
+e414922642.508706
+r1
+xCpResource
+xysb/Resources/splash/Default-Landscape@2x~ipad.png
+xbuild/ysb.app/Default-Landscape@2x~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection48"Copy build/ysb.app/Default-Landscape@2x~ipad.png113"[1mCpResource[0m ysb/Resources/splash/Default-Landscape@2x~ipad.png build/ysb.app/Default-Landscape@2x~ipad.png90be819237bbb841^473b829237bbb841^---0#0#1#-19%DVTDocumentLocation2@86"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Default-Landscape@2x~ipad.png003844e5dfffdf42^593"[1mCpResource[0m ysb/Resources/splash/Default-Landscape@2x~ipad.png build/ysb.app/Default-Landscape@2x~ipad.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/splash/Default-Landscape@2x~ipad.png /Users/tsou/Documents/demo/build/ysb.app36"020E4469-1909-4FB8-A8C9-96B2C6B56B78-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/splash/Default-Landscape~ipad.png build/ysb.app/Default-Landscape~ipad.png
+s414922642.509933
+e414922642.512007
+r1
+xCpResource
+xysb/Resources/splash/Default-Landscape~ipad.png
+xbuild/ysb.app/Default-Landscape~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Copy build/ysb.app/Default-Landscape~ipad.png107"[1mCpResource[0m ysb/Resources/splash/Default-Landscape~ipad.png build/ysb.app/Default-Landscape~ipad.png919a829237bbb841^6215839237bbb841^---0#0#1#-19%DVTDocumentLocation2@83"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Default-Landscape~ipad.png003844e5dfffdf42^584"[1mCpResource[0m ysb/Resources/splash/Default-Landscape~ipad.png build/ysb.app/Default-Landscape~ipad.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/splash/Default-Landscape~ipad.png /Users/tsou/Documents/demo/build/ysb.app36"9DCB9F52-D736-4550-B092-C2673BD27157-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/splash/Default-Portrait@2x~ipad.png build/ysb.app/Default-Portrait@2x~ipad.png
+s414922642.513265
+e414922642.515325
+r1
+xCpResource
+xysb/Resources/splash/Default-Portrait@2x~ipad.png
+xbuild/ysb.app/Default-Portrait@2x~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/ysb.app/Default-Portrait@2x~ipad.png111"[1mCpResource[0m ysb/Resources/splash/Default-Portrait@2x~ipad.png build/ysb.app/Default-Portrait@2x~ipad.pngbc74839237bbb841^bbec839237bbb841^---0#0#1#-19%DVTDocumentLocation2@85"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Default-Portrait@2x~ipad.png003844e5dfffdf42^590"[1mCpResource[0m ysb/Resources/splash/Default-Portrait@2x~ipad.png build/ysb.app/Default-Portrait@2x~ipad.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/splash/Default-Portrait@2x~ipad.png /Users/tsou/Documents/demo/build/ysb.app36"99C45EF7-C102-425B-8E19-3B4C915F1144-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/splash/Default-Portrait~ipad.png build/ysb.app/Default-Portrait~ipad.png
+s414922642.516575
+e414922642.518689
+r1
+xCpResource
+xysb/Resources/splash/Default-Portrait~ipad.png
+xbuild/ysb.app/Default-Portrait~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy build/ysb.app/Default-Portrait~ipad.png105"[1mCpResource[0m ysb/Resources/splash/Default-Portrait~ipad.png build/ysb.app/Default-Portrait~ipad.png384c849237bbb841^32c9849237bbb841^---0#0#1#-19%DVTDocumentLocation2@82"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Default-Portrait~ipad.png003844e5dfffdf42^581"[1mCpResource[0m ysb/Resources/splash/Default-Portrait~ipad.png build/ysb.app/Default-Portrait~ipad.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/splash/Default-Portrait~ipad.png /Users/tsou/Documents/demo/build/ysb.app36"A1F71CE3-5638-45E2-9183-A329440C695A-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/splash/Default@2x~iphone.png build/ysb.app/Default@2x~iphone.png
+s414922642.519897
+e414922642.521834
+r1
+xCpResource
+xysb/Resources/splash/Default@2x~iphone.png
+xbuild/ysb.app/Default@2x~iphone.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection40"Copy build/ysb.app/Default@2x~iphone.png97"[1mCpResource[0m ysb/Resources/splash/Default@2x~iphone.png build/ysb.app/Default@2x~iphone.pngee25859237bbb841^9d9c859237bbb841^---0#0#1#-19%DVTDocumentLocation2@78"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Default@2x~iphone.png003844e5dfffdf42^569"[1mCpResource[0m ysb/Resources/splash/Default@2x~iphone.png build/ysb.app/Default@2x~iphone.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/splash/Default@2x~iphone.png /Users/tsou/Documents/demo/build/ysb.app36"ED6E4BDA-CD36-441D-8D58-9EE73A50F3C7-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/Resources/splash/Default~iphone.png build/ysb.app/Default~iphone.png
+s414922642.523028
+e414922642.525041
+r1
+xCpResource
+xysb/Resources/splash/Default~iphone.png
+xbuild/ysb.app/Default~iphone.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Copy build/ysb.app/Default~iphone.png91"[1mCpResource[0m ysb/Resources/splash/Default~iphone.png build/ysb.app/Default~iphone.png62f3859237bbb841^6a69869237bbb841^---0#0#1#-19%DVTDocumentLocation2@75"file://localhost/Users/tsou/Documents/demo/build/ysb.app/Default~iphone.png003844e5dfffdf42^560"[1mCpResource[0m ysb/Resources/splash/Default~iphone.png build/ysb.app/Default~iphone.png    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/Resources/splash/Default~iphone.png /Users/tsou/Documents/demo/build/ysb.app36"0F0500BB-8129-4A9F-9FDF-33E3DD9E4866-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CCpResource ysb/config.xml build/ysb.app/config.xml
+s414922642.486736
+e414922642.488998
+r1
+xCpResource
+xysb/config.xml
+xbuild/ysb.app/config.xml
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection29"Copy build/ysb.app/config.xml58"[1mCpResource[0m ysb/config.xml build/ysb.app/config.xmlefad7c9237bbb841^a12f7d9237bbb841^---0#0#1#-19%DVTDocumentLocation2@67"file://localhost/Users/tsou/Documents/demo/build/ysb.app/config.xml003844e5dfffdf42^502"[1mCpResource[0m ysb/config.xml build/ysb.app/config.xml    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tsou/Documents/demo/ysb/config.xml /Users/tsou/Documents/demo/build/ysb.app36"FC468119-CFEF-402A-BA10-81C8F6755D08-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CGenerateDSYMFile /Users/tsou/Documents/demo/build/ysb.app.dSYM /Users/tsou/Documents/demo/build/ysb.app/ysb
+s414922652.481307
+e414922652.590049
+r1
+xGenerateDSYMFile
+x/Users/tsou/Documents/demo/build/ysb.app.dSYM
+x/Users/tsou/Documents/demo/build/ysb.app/ysb
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Generate /Users/tsou/Documents/demo/build/ysb.app.dSYM69"[1mGenerateDSYMFile[0m [1mbuild/ysb.app.dSYM[0m build/ysb.app/ysbaa467b9c37bbb841^fa0d979c37bbb841^---0#0#1#-19%DVTDocumentLocation2@61"file://localhost/Users/tsou/Documents/demo/build/ysb.app.dSYM003844e5dfffdf42^515"[1mGenerateDSYMFile[0m [1mbuild/ysb.app.dSYM[0m build/ysb.app/ysb    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/tsou/Documents/demo/build/ysb.app/ysb -o /Users/tsou/Documents/demo/build/ysb.app.dSYM36"4652A948-E334-4240-B142-7A17CDC895B0-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CLd /Users/tsou/Documents/demo/build/ysb.app/ysb normal i386
+s414922651.978143
+e414922652.472574
+r1
+xLd
+x/Users/tsou/Documents/demo/build/ysb.app/ysb
+xnormal
+xi386
+d/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/ysb.LinkFileList
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/crt1.o
+d/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/main.o
+d/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/AppDelegate.o
+d/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/MainViewController.o
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
+d/Users/tsou/Documents/demo/build/libCordova.a
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+d/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphonesimulator.a
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libdnsinfo.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection49"Link /Users/tsou/Documents/demo/build/ysb.app/ysb40"[1mLd[0m build/ysb.app/ysb normal i386847efa9b37bbb841^33fb789c37bbb841^---0#0#1#--1640"[1mLd[0m build/ysb.app/ysb normal i386    cd /Users/tsou/Documents/demo    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode\ 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/tsou/Documents/demo/build -F/Users/tsou/Documents/demo/build -filelist /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/ysb.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -all_load -Obj-C -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -framework AssetsLibrary /Users/tsou/Documents/demo/build/libCordova.a -framework Foundation -weak_framework UIKit -framework CoreGraphics -framework AddressBook -framework AddressBookUI -framework AudioToolbox -weak_framework AVFoundation -framework CFNetwork -framework CoreLocation -framework MediaPlayer -framework QuartzCore -framework SystemConfiguration -framework MobileCoreServices -weak_framework CoreMedia -Xlinker -dependency_info -Xlinker /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/ysb_dependency_info.dat -o /Users/tsou/Documents/demo/build/ysb.app/ysb36"0E2DEEB6-C2AB-479D-80A2-4E1DB46F558F-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CPhaseScriptExecution Copy\ www\ directory /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Script-304B58A110DAC018002A0835.sh
+s414922642.340842
+e414922642.478821
+r1
+xPhaseScriptExecution
+xCopy www directory
+x/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Script-304B58A110DAC018002A0835.sh
+o
+oreal	0m0.121s
+ouser	0m0.037s
+osys	0m0.043s
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'132"[1mPhaseScriptExecution[0m Copy\ www\ directory build/ysb.build/Debug-iphonesimulator/ysb.build/Script-304B58A110DAC018002A0835.shd505589237bbb841^95997a9237bbb841^-42"real	0m0.121suser	0m0.037ssys	0m0.043s3(21%IDEActivityLogMessage2@14"real	0m0.121s-414922642#1#14#-0#-----2@14"user	0m0.037s-414922642#15#14#-0#-----2@13"sys	0m0.043s-414922642#29#13#-0#-----0#0#1#--20348"[1mPhaseScriptExecution[0m Copy\ www\ directory build/ysb.build/Debug-iphonesimulator/ysb.build/Script-304B58A110DAC018002A0835.sh    cd /Users/tsou/Documents/demo    setenv ACTION build    setenv AD_HOC_CODE_SIGNING_ALLOWED NO    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER tsou    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv ALWAYS_USE_SEPARATE_HEADERMAPS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD i386    setenv ARCHS_STANDARD_32_64_BIT i386    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv ARCHS_STANDARD_INCLUDING_64_BIT "i386 x86_64"    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/tsou/Documents/demo/build    setenv BUILD_ROOT /Users/tsou/Documents/demo/build    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/tsou/Documents/demo/build    setenv CACHE_ROOT /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode    setenv CCHROOT /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLANG_ENABLE_OBJC_ARC NO    setenv CLANG_WARN_CONSTANT_CONVERSION YES    setenv CLANG_WARN_ENUM_CONVERSION YES    setenv CLANG_WARN_INT_CONVERSION YES    setenv CLANG_WARN__DUPLICATE_METHOD_MATCH YES    setenv CLASS_FILE_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/tsou/Documents/demo/build/ysb.app    setenv CODE_SIGNING_ALLOWED NO    setenv CODE_SIGN_CONTEXT_CLASS XCiPhoneSimulatorCodeSignContext    setenv COLOR_DIAGNOSTICS YES    setenv COMBINE_HIDPI_IMAGES NO    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/CompositeSDKs    setenv COMPRESS_PNG_FILES YES    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/tsou/Documents/demo/build    setenv CONFIGURATION_TEMP_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator    setenv CONTENTS_FOLDER_PATH ysb.app    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CREATE_INFOPLIST_SECTION_IN_BINARY NO    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEFAULT_KEXT_INSTALL_PATH /System/Library/Extensions    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR "/Applications/Xcode 2.app/Contents/Developer/Applications"    setenv DEVELOPER_BIN_DIR "/Applications/Xcode 2.app/Contents/Developer/usr/bin"    setenv DEVELOPER_DIR "/Applications/Xcode 2.app/Contents/Developer"    setenv DEVELOPER_FRAMEWORKS_DIR "/Applications/Xcode 2.app/Contents/Developer/Library/Frameworks"    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "/Applications/Xcode 2.app/Contents/Developer/Library/Frameworks"    setenv DEVELOPER_LIBRARY_DIR "/Applications/Xcode 2.app/Contents/Developer/Library"    setenv DEVELOPER_SDK_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"    setenv DEVELOPER_TOOLS_DIR "/Applications/Xcode 2.app/Contents/Developer/Tools"    setenv DEVELOPER_USR_DIR "/Applications/Xcode 2.app/Contents/Developer/usr"    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH ysb.app/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/ysb.dst    setenv DT_TOOLCHAIN_DIR "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain"    setenv DWARF_DSYM_FILE_NAME ysb.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/tsou/Documents/demo/build    setenv EFFECTIVE_PLATFORM_NAME -iphonesimulator    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH ysb.app/Executables    setenv EXECUTABLE_FOLDER_PATH ysb.app    setenv EXECUTABLE_NAME ysb    setenv EXECUTABLE_PATH ysb.app/ysb    setenv FILE_LIST /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH ysb.app/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "/Users/tsou/Documents/demo/build "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME ysb.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD c99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OBJC_LEGACY_DISPATCH YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER ysb/ysb-Prefix.pch    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_THUMB_SUPPORT NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNINITIALIZED_AUTOS YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/tsou/Documents/demo/build/include \"/Users/tsou/Documents/demo/build/usr/local/lib/include\" \"/Users/tsou/Documents/demo/build/UninstalledProducts/include\" \"/Users/tsou/Documents/demo/build\""    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE ysb/ysb-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT binary    setenv INFOPLIST_PATH ysb.app/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH ysb.app/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/ysb.dst/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER tsou    setenv INSTALL_PATH /Applications    setenv INSTALL_ROOT /tmp/ysb.dst    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH ysb.app/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DEPENDENCY_INFO_FILE /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/ysb_dependency_info.dat    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-LinkMap-normal-i386.txt    setenv LD_NO_PIE NO    setenv LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER YES    setenv LEGACY_DEVELOPER_DIR "/Applications/Xcode 2.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer"    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_KEXT_INSTALL_PATH /Library/Extensions    setenv LIBRARY_SEARCH_PATHS "/Users/tsou/Documents/demo/build "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal/i386/ysb.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH ysb.app/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 12F37    setenv MAC_OS_X_VERSION_ACTUAL 1085    setenv MAC_OS_X_VERSION_MAJOR 1080    setenv MAC_OS_X_VERSION_MINOR 0805    setenv MODULE_CACHE_DIR /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/ModuleCache    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJC_ABI_VERSION 2    setenv OBJECT_FILE_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Objects-normal    setenv OBJROOT /Users/tsou/Documents/demo/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_LDFLAGS "-weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -all_load -Obj-C"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/local/bin:/Applications/Xcode 2.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode 2.app/Contents/Developer/Headers /Applications/Xcode 2.app/Contents/Developer/SDKs /Applications/Xcode 2.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH ysb.app/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/PkgInfo    setenv PKGINFO_PATH ysb.app/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications"    setenv PLATFORM_DEVELOPER_BIN_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin"    setenv PLATFORM_DEVELOPER_LIBRARY_DIR "/Applications/Xcode 2.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library"    setenv PLATFORM_DEVELOPER_SDK_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs"    setenv PLATFORM_DEVELOPER_TOOLS_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Tools"    setenv PLATFORM_DEVELOPER_USR_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr"    setenv PLATFORM_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform"    setenv PLATFORM_NAME iphonesimulator    setenv PLATFORM_PREFERRED_ARCH i386    setenv PLATFORM_PRODUCT_BUILD_VERSION 11A465    setenv PLATFORM_VERSION_AVAILABILITY_H_FORMAT 70000    setenv PLIST_FILE_OUTPUT_FORMAT binary    setenv PLUGINS_FOLDER_PATH ysb.app/PlugIns    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH ysb.app/PrivateHeaders    setenv PRODUCT_NAME ysb    setenv PRODUCT_SETTINGS_PATH /Users/tsou/Documents/demo/ysb/ysb-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT ysb    setenv PROJECT_DERIVED_FILE_DIR /Users/tsou/Documents/demo/build/ysb.build/DerivedSources    setenv PROJECT_DIR /Users/tsou/Documents/demo    setenv PROJECT_FILE_PATH /Users/tsou/Documents/demo/ysb.xcodeproj    setenv PROJECT_NAME ysb    setenv PROJECT_TEMP_DIR /Users/tsou/Documents/demo/build/ysb.build    setenv PROJECT_TEMP_ROOT /Users/tsou/Documents/demo/build    setenv PUBLIC_HEADERS_FOLDER_PATH ysb.app/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "/Users/tsou/Documents/demo/build "    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH ysb.app/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk"    setenv SDK_DIR "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk"    setenv SDK_NAME iphonesimulator7.0    setenv SDK_PRODUCT_BUILD_VERSION 11A465    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHALLOW_BUNDLE YES    setenv SHARED_DERIVED_FILE_DIR /Users/tsou/Documents/demo/build/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH ysb.app/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH ysb.app/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/tsou/Documents/demo    setenv SRCROOT /Users/tsou/Documents/demo    setenv STRINGS_FILE_OUTPUT_ENCODING binary    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_DEVICE_FAMILIES "1 2"    setenv SUPPORTED_PLATFORMS "iphonesimulator iphoneos"    setenv SYMROOT /Users/tsou/Documents/demo/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR "/Applications/Xcode 2.app/Contents/Developer/Applications"    setenv SYSTEM_DEVELOPER_BIN_DIR "/Applications/Xcode 2.app/Contents/Developer/usr/bin"    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode 2.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR "/Applications/Xcode 2.app/Contents/Developer"    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode 2.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode 2.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode 2.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode 2.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode 2.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS "/Applications/Xcode 2.app/Contents/Developer/Tools"    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode 2.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode 2.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR "/Applications/Xcode 2.app/Contents/Developer/usr"    setenv SYSTEM_DEVELOPER_UTILITIES_DIR "/Applications/Xcode 2.app/Contents/Developer/Applications/Utilities"    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_KEXT_INSTALL_PATH /System/Library/Extensions    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETED_DEVICE_FAMILY 1,2    setenv TARGETNAME ysb    setenv TARGET_BUILD_DIR /Users/tsou/Documents/demo/build    setenv TARGET_NAME ysb    setenv TARGET_TEMP_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build    setenv TEMP_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build    setenv TEMP_FILES_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build    setenv TEMP_FILE_DIR /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build    setenv TEMP_ROOT /Users/tsou/Documents/demo/build    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH ysb.app    setenv UNSTRIPPED_PRODUCT NO    setenv USER tsou    setenv USER_APPS_DIR /Users/tsou/Applications    setenv USER_LIBRARY_DIR /Users/tsou/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS i386    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH ysb.app/version.plist    setenv VERSION_INFO_BUILDER tsou    setenv VERSION_INFO_FILE ysb_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:ysb  PROJECT:ysb-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME ysb.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR "/Applications/Xcode 2.app/Contents/Developer/Library/Xcode"    setenv XCODE_PRODUCT_BUILD_VERSION 5A1412    setenv XCODE_VERSION_ACTUAL 0500    setenv XCODE_VERSION_MAJOR 0500    setenv XCODE_VERSION_MINOR 0500    setenv XPCSERVICES_FOLDER_PATH ysb.app/XPCServices    setenv YACC yacc    setenv arch i386    setenv diagnostic_message_length 80    setenv variant normal    /bin/sh -c /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/Script-304B58A110DAC018002A0835.sh36"4C4EA489-0219-4F69-8217-8B61A5345419-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CProcessInfoPlistFile /Users/tsou/Documents/demo/build/ysb.app/Info.plist /Users/tsou/Documents/demo/ysb/ysb-Info.plist
+s414922642.328992
+e414922642.332075
+r1
+xProcessInfoPlistFile
+x/Users/tsou/Documents/demo/build/ysb.app/Info.plist
+x/Users/tsou/Documents/demo/ysb/ysb-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Process /Users/tsou/Documents/demo/ysb/ysb-Info.plist80"[1mProcessInfoPlistFile[0m build/ysb.app/Info.plist [1mysb/ysb-Info.plist[0m594c549237bbb841^7503559237bbb841^---0#0#1#-19%DVTDocumentLocation2@61"file://localhost/Users/tsou/Documents/demo/ysb/ysb-Info.plist0000000000000000^582"[1mProcessInfoPlistFile[0m build/ysb.app/Info.plist [1mysb/ysb-Info.plist[0m    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-infoPlistUtility /Users/tsou/Documents/demo/ysb/ysb-Info.plist -genpkginfo /Users/tsou/Documents/demo/build/ysb.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/tsou/Documents/demo/build/ysb.app/Info.plist36"9A8F128D-1709-4B1E-9D72-2CC20000D7B0-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CProcessPCH /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.pch ysb/ysb-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s414922651.571604
+e414922651.864099
+r1
+xProcessPCH
+x/var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.pch
+xysb/ysb-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/tsou/Documents/demo/ysb/ysb-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection29"Precompile ysb/ysb-Prefix.pch280"[1mProcessPCH[0m /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.pch ysb/ysb-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd36c929b37bbb841^d237dd9b37bbb841^---0#0#1#-19%DVTDocumentLocation2@61"file://localhost/Users/tsou/Documents/demo/ysb/ysb-Prefix.pch0000000000000000^3283"[1mProcessPCH[0m /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.pch ysb/ysb-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tsou/Documents/demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode\ 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-generated-files.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-own-target-headers.hmap -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-all-target-headers.hmap -iquote /Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/ysb-project-headers.hmap -I/Users/tsou/Documents/demo/build/include -I/Users/tsou/Documents/demo/build/usr/local/lib/include -I/Users/tsou/Documents/demo/build/UninstalledProducts/include -I/Users/tsou/Documents/demo/build -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources/i386 -I/Users/tsou/Documents/demo/build/ysb.build/Debug-iphonesimulator/ysb.build/DerivedSources -F/Users/tsou/Documents/demo/build --serialize-diagnostics /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.d -c /Users/tsou/Documents/demo/ysb/ysb-Prefix.pch -o /var/folders/ns/pqn0qh117ynbdch1_cm8vlfm0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/ysb-Prefix-clqnvsgfmnuazcgotozuuvrdgstm/ysb-Prefix.pch.pch36"CB1D2913-2838-4566-B658-4BC30F7F2242-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+
+CTouch /Users/tsou/Documents/demo/build/ysb.app
+s414922652.598717
+e414922652.616650
+r1
+xTouch
+x/Users/tsou/Documents/demo/build/ysb.app
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection46"Touch /Users/tsou/Documents/demo/build/ysb.app27"[1mTouch[0m build/ysb.appda54999c37bbb841^2bdd9d9c37bbb841^---0#0#1#--339"[1mTouch[0m build/ysb.app    cd /Users/tsou/Documents/demo    setenv PATH "/Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode 2.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /usr/bin/touch -c /Users/tsou/Documents/demo/build/ysb.app36"44A501E0-4A69-49E5-91D6-C131A4FDBEFC-
+b584D1177-5B71-4DFE-A9FE-B6C565844992
+

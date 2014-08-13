@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<style type="text/css">
+		#pruchaseDepotAddsPostBox .lineBox{width:80px;}
+		#pruchaseDepotAddsPostBox .ui-input-text{margin:3px 0px;}
+		.purchaseDepotAddTd{text-align: center; background-color:#f8f9f9;}
+		.th .purchaseDepotAddTd{background-color: #BEBEBE;}
+		.purchaseDepotAddTd .lineBox{width:98%;}
+	</style>
+	<link href="css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		uiOPT();
+		setTimeout(function(){
+			$.mobile.loading('show');
+		},100);
+
+		var productList = {};
+	</script>
+	<div class="toolBar">
+		<a class="toolBar-a" id="pruchaseDepotAddsSaveButton">保存</a>
+		<a class="toolBar-a goBack"><span>« </span>返回</a>
+	</div>
+
+	<div id='pruchaseDepotAddsPostBox'>
+	<div class="searchBox">
+		店员：<div class="lineBox" style="width: 192px;"><input type="text" id="managers" class="post-data glb-text" /></div>
+		总价：<div class="lineBox"><input type="text" value="0" readonly="readonly" id="totalprice" class="post-data glb-text" /></div>
+		总件：<div class="lineBox"><input type="text" value="0" readonly="readonly" id="counts" class="post-data glb-text" /></div>
+	</div>
+	</div>
+
+	<div id="pruchaseDepotAddsscrollBox" class="scrollBox" style="padding:20px 8px; overflow:hidden;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td c lass="purchaseDepotAddTd" style="width:32px;">序号</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">厂商</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">货品</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">颜色</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">尺码</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">数量</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">单价</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">小计</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">操作</td>
+			</tr>
+		</table>
+
+		<div id="pruchaseDepotAddsscrollBoxA" style="position: relative;">
+		<div style="padding-bottom:300px;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">1<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">2<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">3<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">4<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">5<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">6<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">7<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">8<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">9<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">10<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">11<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="purchaseDepotAddTd" style="width:32px;text-align: center;">12<input type="hidden" value="1" postInput="number" /></td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="firm" placeholder="点击选择" readonly="readonly" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="unitprice" class="post-data glb-text" placeholder="0"  /></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="0" readonly="readonly" postInput="subtotal" class="post-data glb-text"/></div>
+				</td>
+				<td class="purchaseDepotAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+		</table>
+		</div>
+		</div>
+	</div>
+
+<!--DropDownList控件-->
+<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+
+<!--设置UI-->
+<script type="text/javascript">
+	$(function(){
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 3) -10;
+			$("#pruchaseDepotAddsscrollBoxA").height(CXT_HEIGHT);
+		}
+		resize();
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+
+		//数据块可以移动
+		var purchaseDepotAddpScroll;
+		setTimeout(function(){
+			purchaseDepotAddpScroll = new iScroll('pruchaseDepotAddsscrollBoxA');
+			purchaseDepotAddpScroll.refresh();
+		},100);
+
+		$(document).bind( "pageshow", function( event, prevPage){
+			if(purchaseDepotAddpScroll !== undefined){
+				purchaseDepotAddpScroll.refresh();
+			}
+		});
+
+		// 时间控件
+        var curr = new Date().getFullYear();
+		var opt = {
+	        preset: 'date', //日期
+	        display: 'modal', //显示方式 
+	        mode: 'scroller', //日期选择模式
+	        dateFormat: 'yy-mm-dd', // 日期格式
+	        setText: '确定', //确认按钮名称
+	        cancelText: '取消',//取消按钮名籍我
+	        dateOrder: 'yymmdd', //面板中日期排列格式
+	        dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+	        endYear:2020 //结束年份
+	    };
+		$("#selecttime").mobiscroll(opt).date(opt);
+
+		// 返回
+		$(".goBack").tap(function(){
+		    window.history.back();
+		    return false;
+		});
+	});
+</script>
+
+<!--数据操作-->
+<script type="text/javascript">
+	$(function(){
+		$('#pruchaseDepotAddsscrollBoxA input[postInput="product"]').bind('input propertychange',function(){
+			$.smartTips.show({
+				trigger 	: 	$(this),
+				data 		: 	GLOBALS['ProductList'],
+				field		: 	Array('id','code','name'),
+				attr		: 	Array('purchasePrice','code'),
+				key			: 	'name',
+				callback	: 	function(el,item){
+					var parent 		= el.parent().parent().parent().parent(),
+						unitprice	= parent.find('input[postInput="unitprice"]');
+					unitprice.val(item.attr('purchaseprice'));
+				}
+			});
+		});
+
+		// 删除数据
+		$('.dpdelBtns').bind('tap',function(){
+			var tr = $(this).parent().parent();
+			tr.find('input').val('');
+			statistics();
+		});
+
+		// 统计总价，总件数
+		var statistics = function(){
+			var counts = 0,
+				money  = 0;
+
+			$('#pruchaseDepotAddsscrollBoxA input[postInput="counts"]').each(function(){
+				if(!isNaN($(this).val()) && $(this).val().length > 0){
+					counts = parseInt(counts) + parseInt($(this).val());
+				}
+			});
+
+			$('#pruchaseDepotAddsscrollBoxA input[postInput="subtotal"]').each(function(){
+				if(!isNaN($(this).val()) && $(this).val().length > 0){
+					money = parseInt(money) + parseInt($(this).val());
+				}
+			});
+
+			$('#pruchaseDepotAddsPostBox #counts').val(counts);
+			$('#pruchaseDepotAddsPostBox #totalprice').val(money);
+			$('#pruchaseDepotAddsPostBox #amount').val(money);
+		}
+
+		// 实付
+		var payment	   	= function(){
+
+			var cashVal 	= parseInt($('#pruchaseDepotAddsPostBox #cash').val()),
+				cardVal		= parseInt($('#pruchaseDepotAddsPostBox #card').val()),
+				remitVal 	= parseInt($('#pruchaseDepotAddsPostBox #remit').val());
+
+			var cash   		= (!isNaN(cashVal))  ? cashVal  : 0,
+				card		= (!isNaN(cardVal))  ? cardVal  : 0,
+				remit		= (!isNaN(remitVal)) ? remitVal : 0;
+
+			$('#pruchaseDepotAddsPostBox #actually').val(cash + card + remit);
+		}
+
+		// 现金
+		$('#pruchaseDepotAddsPostBox #cash').bind('input propertychange',function(){
+			//
+			payment();
+		});
+
+		// 刷卡
+		$('#pruchaseDepotAddsPostBox #card').bind('input propertychange',function(){
+			//
+			payment();
+		});
+
+		// 汇款
+		$('#pruchaseDepotAddsPostBox #remit').bind('input propertychange',function(){
+
+			payment();
+		});
+
+		// 数量添加
+		$('#pruchaseDepotAddsscrollBoxA input[postInput="counts"]').bind('input propertychange',function(){
+			var parent 		= $(this).parent().parent().parent().parent(),
+				subtotal	= parent.find('input[postInput="subtotal"]'),
+				unitprice	= parent.find('input[postInput="unitprice"]');
+
+			subtotal.val(unitprice.val() * $(this).val());
+			statistics();
+		});
+
+		// 调整单价
+		$('#pruchaseDepotAddsscrollBoxA input[postInput="unitprice"]').bind('input propertychange',function(){
+			var parent 		= $(this).parent().parent().parent().parent(),
+				subtotal	= parent.find('input[postInput="subtotal"]'),
+				counts		= parent.find('input[postInput="counts"]');
+
+			subtotal.val(counts.val() * $(this).val());
+			statistics();
+		});
+
+		// 获取所有颜色
+		var colorList 	= undefined,
+			colorInput	= undefined;
+		$.get(SERVER + 'Color/GetList?token=' + TOKEN,function(data){
+			var data = eval("("+data+")");
+			// 颜色选择框
+			var colorBubbleList = $.bubbleList({
+				parent: $('body'),
+				data  : data.Result.Color,
+				bindCallFun: function(item,data){
+					item.text(data.color);
+				},
+				selectCallFun:function(item){
+					colorInput.val(item.text());
+					$('bubblebox').hide();
+				}
+			});
+			// 显示
+			$('#pruchaseDepotAddsscrollBoxA input[postInput="color"]').focus(function(){
+				colorInput = $(this);
+				colorBubbleList.show($(this));
+			});
+		});
+
+		// 获取所有厂商
+		var firmList 	= undefined,
+			firmInput 	= undefined;
+		$.get(SERVER + 'Firm/GetList?token=' + TOKEN,function(data){
+			var data = eval("("+data+")");
+			// 尺寸选择框
+			var firmBubbleList = $.bubbleList({
+				parent: $('body'),
+				data  : data.Result,
+				bindCallFun: function(item,data){
+					item.text(data.firm);
+					item.attr('value',data.id);
+				},
+				selectCallFun:function(item){
+					firmInput.val(item.text());
+					var id = item.attr('value');
+					firmInput.attr('valid',id);
+					$.mobile.loading('show');
+					$.get(SERVER + 'Product/GetIdByList?token=' + TOKEN + '&id=' + id,function(rst){
+						var rst = eval("("+rst+")");
+						if(rst.Status == 'SUCCESS'){
+							productList = rst.Result;
+						}
+					});
+
+					$('bubblebox').hide();
+				}
+			});
+			// 显示
+			$('#pruchaseDepotAddsscrollBoxA input[postInput="firm"]').focus(function(){
+				firmInput = $(this);
+				firmBubbleList.show($(this));
+			});
+		});
+
+
+		// 获取所有尺寸
+		var sizeList 	= undefined,
+			sizeInput 	= undefined;
+		$.get(SERVER + 'Size/GetList?token=' + TOKEN,function(data){
+			var data = eval("("+data+")");
+			// 尺寸选择框
+			var sizeBubbleList = $.bubbleList({
+				parent: $('body'),
+				data  : data.Result.Size,
+				bindCallFun: function(item,data){
+					item.text(data.size);
+				},
+				selectCallFun:function(item){
+					sizeInput.val(item.text());
+					$('bubblebox').hide();
+				}
+			});
+			// 显示
+			$('#pruchaseDepotAddsscrollBoxA input[postInput="size"]').focus(function(){
+				sizeInput = $(this);
+				sizeBubbleList.show($(this));
+			});
+		});
+	});
+</script>
+
+<!--数据提交-->
+<script type="text/javascript">
+	totalprice
+	// 添加表单
+	$('#pruchaseDepotAddsSaveButton').tap(function(){
+		$.mobile.loading('show');
+		var list 	= {},
+			count 	= 0;
+		$('#pruchaseDepotAddsscrollBoxA tr').each(function(){
+			console.log(parseInt($(this).find('input[postinput="subtotal"]').val()));
+			if(!isNaN(parseInt($(this).find('input[postinput="subtotal"]').val()))){
+				item = {}
+				$(this).find('input').each(function(){
+					item[$(this).attr('postInput')] = $(this).val();
+				});
+				var productInfo 	= $(this).find('input[postInput="product"]').val().split('/');
+				item['token'] 		= TOKEN;
+				item['productcode'] = productInfo[1];
+				item['productid']	= productInfo[0];
+				item['product']		= productInfo[2];
+				item['firm']		= $(this).find('input[postInput="firm"]').val();
+				item['firmid']		= $(this).find('input[postInput="firm"]').attr('valid');
+				item['managers']	= $('#pruchaseDepotAddsPostBox #managers').val();
+				list[count] = item;
+				count ++;
+			}
+		});
+		//console.log(list);
+		$.ajax({url: SERVER + "DepotForms/Adds?token=" + TOKEN,
+			data:list,
+			type:'post',
+			success: function(data){
+				var result = eval("("+data+")");
+				alert(result.Status,result.Message);
+				$.mobile.changePage('purchaseDepotList.html');
+				//return;
+			}
+		});
+	});
+</script>
+</body>
+</html>

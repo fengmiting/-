@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+	<meta name="format-detection" content="telephone=no" />
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/ichart.1.2.min.js"></script>
+	<script type="text/javascript">
+		var SERVER = 'http://123.157.149.17:897/index.php/Api/';				// 数据接口
+		var WEB    = 'http://123.157.149.17:897/index.php/';
+
+		(function($){
+		    $.Request = function(name){
+		        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		        var r = window.location.search.substr(1).match(reg);
+		        if (r!=null) return unescape(r[2]); return null;
+		    }
+		})(window.jQuery);
+
+		var getColor = function(){return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).slice(-6);}
+	</script>
+</head>
+<body>
+ 
+		<div id='statisProduct-ichart-render'></div>
+		<script type="text/javascript">
+		$(function(){
+			$.get(SERVER + 'Statis/customer?token=' + $.Request('token'),function(data){
+				data = eval("("+ data +")");
+ 
+				new iChart.Bar2D({
+					render : 'statisProduct-ichart-render',
+					data: data,
+					title : {
+						text:'客户消费统计图',
+						color:'#b5bcc5'
+					},
+					footnote : 'Data from StatCounter',
+					width : 800,
+					height : 800,
+					offsetx:20,
+					coordinate:{
+						width:620,
+						height:650,
+						grid_color:'#4e5464',
+						axis:{
+							color:'#4e5464',
+							width:[0,0,8,1]
+						},
+						scale:[{
+							 position:'bottom',	
+							 start_scale:0,
+							 end_scale:40,
+							 scale_space:5,
+							 label:{color:'#ffffff'},
+							 listeners:{
+								parseText:function(t,x,y){
+									return {text:t+"%"}
+								}
+							 }
+						}]
+					},
+					label:{color:'#dcdcdc'},
+					background_color : '#3c4251',
+					sub_option:{
+						listeners:{
+							parseText:function(r,t){
+								return t+"￥";
+							}
+						}
+					},
+					legend:{enable:false}
+				}).draw();
+			});
+		});
+		</script> 		
+	</div>
+ 
+</body>
+</html>

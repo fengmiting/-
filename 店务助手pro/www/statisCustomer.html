@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+ 
+	
+	<div class="toolBar" style="position: relative;">
+		<a data-transition="slide" class="toolBar-a toolBar-a-checked" href="statisCustomer.html">客户消费统计</a>
+		<a data-transition="slide" class="toolBar-a" href="statisProduct.html">款号销售统计</a>
+		<a data-transition="slide" class="toolBar-a" href="statisXSE.html">销售额统计</a>
+	</div>
+	
+	<div id='statisCustomerPostBox'>
+<!-- 	<div class="searchBox">
+		日期从：<div class="lineBox" style="width:100px;"><input type="text" id="startTime" class="post-data glb-text" /></div>
+		到 <div class="lineBox" style="width:100px;"><input type="text" id="endTime" class="post-data glb-text" /></div>
+		<a id="statisCustomersearchButton" class='toolBar-a'>搜索</a> <a id='statisCustomerPostBoxCl-button' class='toolBar-a'>清空</a>
+	</div> -->
+	</div>
+
+	<div id="statisCustomerscrollBox" class="scrollBox">
+	<div class="scrollPanel">
+ 		<iframe id="statisCustomerIF" src="" style="width:850px; height:450px;"></iframe>	
+ 		<script type="text/javascript">
+ 			$(function(){
+ 				$('#statisCustomerIF').attr('src','statisCustomerIF.html?token=' + TOKEN);
+ 			});
+ 		</script>	
+	</div>
+	</div>
+</body>
+</html>

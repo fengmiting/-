@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+	<meta name="format-detection" content="telephone=no" />
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/ichart.1.2.min.js"></script>
+	<script type="text/javascript">
+		var SERVER = 'http://123.157.149.17:897/index.php/Api/';				// 数据接口
+		var WEB    = 'http://123.157.149.17:897/index.php/';
+
+		(function($){
+		    $.Request = function(name){
+		        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		        var r = window.location.search.substr(1).match(reg);
+		        if (r!=null) return unescape(r[2]); return null;
+		    }
+		})(window.jQuery);
+
+		var getColor = function(){return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).slice(-6);}
+	</script>
+</head>
+<body>
+ 
+		<div id='statisProduct-ichart-render'></div>
+		<script type="text/javascript">
+		$(function(){
+			$.get(SERVER + 'Statis/product?token=' + $.Request('token'),function(data){
+				data = eval("("+ data +")");
+				for(var i in data){
+					data[i].color = getColor();
+					if(data[i].name == null){
+						data[i].name = '错误的款号';
+					}
+				}
+				new iChart.Bar2D({
+					render : 'statisProduct-ichart-render',
+					data: data,
+					title : '款号销售额统计图',
+					showpercent:false,
+					decimalsnum:2,
+					width : 800,
+					height : 700,
+					coordinate:{
+						width:620,
+						height:650,
+						scale:[{
+							 position:'bottom',	
+
+							 listeners:{
+								parseText:function(t,x,y){
+									return {text:t}
+								}
+							}
+						}]
+					}
+				}).draw();
+			});
+		});
+		</script> 		
+	</div>
+ 
+</body>
+</html>

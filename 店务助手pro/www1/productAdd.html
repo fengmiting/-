@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<script type="text/javascript">uiOPT();</script>
+	<link href="css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		// 绑定数据
+
+		function bindFirm(addItem){
+			// 绑定厂商数据列表
+			$.get(SERVER + 'Firm/GetList?token=' + TOKEN,function(data){
+				var data = eval("("+data+")");
+				if(data.Status == 'SUCCESS'){
+					for(var item in data.Result){
+						addItem(data.Result[item].id,data.Result[item].firm);
+					}
+				}
+			});
+		}
+
+		function bindBrand(addItem){
+			// 绑定品牌数据列表
+			$.get(SERVER + 'Brand/GetList?token=' + TOKEN,function(data){
+				var data = eval("("+data+")");
+				if(data.Status == 'SUCCESS'){
+					for(var item in data.Result){
+						addItem(data.Result[item].id,data.Result[item].brand);
+					}
+				}
+			});
+		}
+
+		function bindStyle(addItem){
+			// 绑定类别数据列表
+			$.get(SERVER + 'Style/GetList?token=' + TOKEN,function(data){
+				var data = eval("("+data+")");
+				if(data.Status == 'SUCCESS'){
+					for(var item in data.Result){
+						addItem(data.Result[item].id,data.Result[item].style);
+					}
+				}
+			});
+		}
+	</script>
+	<div class="toolBar">
+		<a class="toolBar-a" id="saveProduct">保存</a>
+		<a class="toolBar-a goBack"><span>« </span>返回</a>
+		<a class="toolBar-a" data-transition="slide" href="sizeAdd.html">新增尺寸</a>
+		<a class="toolBar-a" data-transition="slide" href="brandAdd.html">新增品牌</a>
+		<a class="toolBar-a" data-transition="slide" href="firmAdd.html">新增厂商</a>
+		<a class="toolBar-a" data-transition="slide" href="styleAdd.html">新增类别</a>
+		<a class="toolBar-a" data-transition="slide" href="styleList.html">类别管理</a>
+		<a class="toolBar-a" data-transition="slide" href="colorAdd.html">新增颜色</a>
+		<a class="toolBar-a">拍照</a>
+		<input id="productPic" style="left: 640px;" class="file-btn" data-role="none" capture="camera" type="file" accept="image/*">
+	</div>
+
+	<div class="editBox" id="editBox" style="overflow: hidden;">
+	<div id='productAddPostBox' class="editBox-bg" style="padding-bottom:400px;">
+		<div class="editItem">
+			<span class="span-red edit-title">款号*</span>
+			<div class="input-box"><input class="post-data glb-text" data-clear-btn="true" type="text" id="code" /></div>
+			<span class="prompt">如：HL123 品牌名 + 款号</span>
+		</div>
+
+		<div class="editItem">
+			<span class="span-red edit-title">名称*</span>
+			<div class="input-box"><input class="post-data glb-text" data-clear-btn="true" type="text" id="name" /></div>
+			<span class="prompt">如：修身T恤</span>
+		</div>
+
+		<div class="editItem">
+			<span class="span-red edit-title">数量*</span>
+			<div class="input-box"><input value="0" class="post-data glb-text" data-clear-btn="true" type="text" id="counts" /></div>
+			<span class="prompt"></span>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">品牌</span>
+			<div class="input-box">
+				<dropdownlist dataBind="bindBrand" id="brandDDL" textBoxId="brand" valBoxClass="post-data" valBoxId="brandId" textBoxClass="post-data glb-text">
+				</dropdownlist>
+			</div>
+			
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">厂商</span>
+			<div class="input-box">
+				<dropdownlist dataBind="bindFirm" id="firmDDL" textBoxId="firm" valBoxClass="post-data" valBoxId="firmId" textBoxClass="post-data glb-text">
+				</dropdownlist>
+			</div>
+			
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">经办人</span>
+			<div class="input-box"><input class="post-data glb-text" data-clear-btn="true" type="text" id="managers" /></div>
+			<span class="prompt">该货品的买手</span>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">类别</span>
+			<div class="input-box">
+				<dropdownlist dataBind="bindStyle" id="styleDDL" textBoxId="style" valBoxClass="post-data" valBoxId="styleId" textBoxClass="post-data glb-text">
+				</dropdownlist>
+			</div>
+			
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">进货价</span>
+			<div class="input-box" style="width:150px;"><input value="0.00" class="post-data glb-text" data-clear-btn="true" type="text" id="purchasePrice" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">批发价</span>
+			<div class="input-box" style="width:150px;"><input value="0.00" class="post-data glb-text" data-clear-btn="true" type="text" id="zeroGrantPrice" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">打包价</span>
+			<div class="input-box" style="width:150px;"><input value="0.00" class="post-data glb-text" data-clear-btn="true" type="text" id="packagePrice" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">零售价</span>
+			<div class="input-box" style="width:150px;"><input value="0.00" class="post-data glb-text" data-clear-btn="true" type="text" id="retailPrice" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">条码</span>
+			<div class="input-box"><input class="post-data glb-text" data-clear-btn="true" type="text" id="barcode" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">颜色</span>
+			<div class="input-box">
+				<input id="color" placeholder="点击请选择" readonly="readonly" class="post-data glb-text" type="text" />
+				<popbox id="productAddColorPOPBox" style="top:10%;">
+					<script type="text/javascript">
+						$(function(){
+							$.get(SERVER + 'Color/GetList?token=' + TOKEN,function(data){
+								var data = eval("("+data+")");
+
+								if(data.Status != 'SUCCESS'){
+									return;
+								}
+
+								var colorGroup = $('#productAddColorPOPBox');
+								for(var i in data.Result.Group){
+									var colorGroupBox 	= $('<div class="colorGroupBox"></div>'),
+										colorGroupTitle	= $('<p class="colorGroupTitle">'+ data.Result.Group[i].colorGroup +'</p>'),
+										colorBox 		= $('<div class="colorBox"></div>');
+
+									colorGroup.append(colorGroupBox);
+									colorGroupBox.append(colorGroupTitle);
+									colorGroupBox.append(colorBox);
+
+									for(var j in data.Result.Color){
+										if(data.Result.Group[i].id == data.Result.Color[j].colorGroupId){
+											var colorLabel 	= $('<label></label>'),
+												colorInput  = $('<input type="checkbox" />');
+
+											colorLabel.append(colorInput);
+											colorLabel.append(' ' + data.Result.Color[j].color);
+											colorBox.append(colorLabel);
+											colorInput.attr('dataVal',data.Result.Color[j].color);
+											colorInput.attr('dataKey',data.Result.Color[j].id);
+
+											colorInput.change(function(){
+												if($(this).is(":checked")){
+													var val = $('#productAddPostBox #color').val() + $(this).attr('dataVal') + ',';
+													$('#productAddPostBox #color').val(val);
+												}else{
+													var val = $(this).attr('dataVal') + ',',
+														rep = $('#productAddPostBox #color').val();
+													rep = rep.replace(val,'');
+													$('#productAddPostBox #color').val(rep);
+												}
+											});
+										}
+									}
+								}
+
+								$('#productAddColorPOPBox').popBox({
+									trigger: $('#productAddPostBox #color')
+								});
+							});
+						});
+					</script>
+				</popbox>
+			</div>
+			
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">尺寸</span>
+			<div class="input-box">
+				<input id="size" placeholder="点击请选择" readonly="readonly" class="post-data glb-text" type="text" />
+				<popbox id="productAddSizePOPBox" style="top:10%;">
+					<script type="text/javascript">
+						$(function(){
+							$.get(SERVER + 'Size/GetList?token=' + TOKEN,function(data){
+								var data = eval("("+data+")");
+
+								if(data.Status != 'SUCCESS'){
+									return;
+								}
+
+								var sizeGroup = $('#productAddSizePOPBox');
+								for(var i in data.Result.Group){
+									var sizeGroupBox 	= $('<div class="sizeGroupBox"></div>'),
+										sizeGroupTitle	= $('<p class="sizeGroupTitle">'+ data.Result.Group[i].sizeGroup +'</p>'),
+										sizeBox 		= $('<div class="sizeBox"></div>');
+
+									sizeGroup.append(sizeGroupBox);
+									sizeGroupBox.append(sizeGroupTitle);
+									sizeGroupBox.append(sizeBox);
+
+									for(var j in data.Result.Size){
+										if(data.Result.Group[i].id == data.Result.Size[j].sizeGroupId){
+											var sizeLabel 	= $('<label></label>'),
+												sizeInput  = $('<input type="checkbox" />');
+
+											sizeLabel.append(sizeInput);
+											sizeLabel.append(' ' + data.Result.Size[j].size);
+											sizeBox.append(sizeLabel);
+											sizeInput.attr('dataVal',data.Result.Size[j].size);
+											sizeInput.attr('dataKey',data.Result.Size[j].id);
+
+											sizeInput.change(function(){
+												if($(this).is(":checked")){
+													var val = $('#productAddPostBox #size').val() + $(this).attr('dataVal') + ',';
+													$('#productAddPostBox #size').val(val);
+												}else{
+													var val = $(this).attr('dataVal') + ',',
+														rep = $('#productAddPostBox #size').val();
+													rep = rep.replace(val,'');
+													$('#productAddPostBox #size').val(rep);
+												}
+											});
+										}
+									}
+								}
+
+								$('#productAddSizePOPBox').popBox({
+									trigger: $('#productAddPostBox #size')
+								});
+							});
+						});
+					</script>
+				</popbox>
+			</div>
+			
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">上架时间</span>
+			<div class="input-box"><input id="addedTime" placeholder="点击请选择" readonly="readonly" class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">季节</span>
+			<div class="input-box">
+				<dropdownlist textBoxId="season" valBoxClass="post-data" valBoxId="seasonId" textBoxClass="post-data glb-text">
+					<item>春季</item>
+					<item>夏季</item>
+					<item>秋季</item>
+					<item>冬季</item>
+					<item>春秋</item>
+					<item>四季</item>
+				</dropdownlist>
+			</div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">折扣</span>
+			<div class="input-box" style="width:150px;"><input class="post-data glb-text" data-clear-btn="true" type="text" id="discount" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">备注</span>
+			<div class="input-box"><input class="post-data glb-text" data-clear-btn="true" type="text" id="remark" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">图像</span>
+			<div class="input-box"><input class="post-data glb-text" data-clear-btn="true" type="text" id="images" /></div>
+		</div>
+
+		<div id="img-box" class="editItem">
+
+		</div>
+	</div>
+	<!--  data-role="none" -->
+	</div>
+	<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+
+	<script type="text/javascript">
+		// 让导航可以滑动
+		var navScroll;
+		setTimeout(function(){
+			navScroll = new iScroll('editBox',{lockDirection:true});
+		    $.mobile.loading('show');
+			navScroll.refresh();
+		},100);
+		navScroll.refresh();
+
+		$(function(){
+
+		    $(".goBack").tap(function(){
+		        window.history.back();
+		        return false;
+		    });
+
+			// 设置高度
+			var resize = function(){
+				var CXT_HEIGHT = $(window).height() - 41 - 48;
+				$("#editBox").height(CXT_HEIGHT);
+			}
+			resize();
+
+			// 浏览器改变大小自动重新设置高度
+			$(window).resize(function(){
+				resize();
+			});
+
+			// 时间控件
+            var curr = new Date().getFullYear();
+			var opt = {
+		        preset: 'date', //日期
+		        display: 'modal', //显示方式 
+		        mode: 'scroller', //日期选择模式
+		        dateFormat: 'yy-mm-dd', // 日期格式
+		        setText: '确定', //确认按钮名称
+		        cancelText: '取消',//取消按钮名籍我
+		        dateOrder: 'yymmdd', //面板中日期排列格式
+		        dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+		        endYear:2020 //结束年份
+		    };
+
+			$("#addedTime").mobiscroll(opt).date(opt);
+		});
+	</script>
+
+	<script type="text/javascript">
+		$('#productPic').change(function(){
+			$.mobile.loading('show');
+			var xx = function(file){
+				var frmData = new FormData();
+				frmData.append('file',file);
+				$.ajax({url: SERVER + "UpFile?token=" + TOKEN,
+					data:frmData,
+					type:'post',
+					contentType:false,
+					processData:false,
+					success: function(data){
+						var result = eval("("+ data +")");
+						if(result.Status == 'SUCCESS'){
+							$('#images').val($('#images').val() + result.Result + ',');
+							var img = $('<img width="100" height="100" src="'+ WEB + result.Result +'" />');
+							$('#img-box').append(img);
+						}
+						$.mobile.loading('hide');
+					}
+				});
+			}
+			
+			for(var i in $(this)[0].files){
+				if(typeof($(this)[0].files[i]) == 'object' && $(this)[0].files[i].type){
+					xx($(this)[0].files[i]);
+				}
+			}
+		});
+	</script>
+
+	<!--设备API-->
+	<script type="text/javascript">
+		$(function(){
+			function onSuccess(imageURI) {
+				alert(imageURI);
+				$('#image').val(imageURI);
+			}
+
+			function onFail(message) {
+			    
+			}
+
+			$('#camera').tap(function(){
+				navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+				    destinationType: navigator.camera.DestinationType.FILE_URI });
+				return false;
+			});
+		});
+	</script>
+
+	<!--数据提交-->
+	<script type="text/javascript">
+		$(function(){
+			$('#saveProduct').tap(function(){
+				if($('#productAddPostBox #code').val() == '' || $('#productAddPostBox #name').val() == ''){
+					alert('错误','款号或名称不能为空');
+					return false;
+				}
+				$.mobile.loading('show');
+				$.ajax({url: SERVER + "Product/Add?token=" + TOKEN,
+					data:postData($('#productAddPostBox')),
+					type:'post',
+					success: function(data){
+						var result = eval("("+data+")");
+						if(result.Status == 'SUCCESS'){
+							alert('提示','体统提示：货品添加成功。');
+						}else{
+							alert('提示','体统提示：货品添加失败，请稍后再试');
+						}
+						$.mobile.loading('hide');
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html> 

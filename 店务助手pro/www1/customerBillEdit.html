@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<link href="css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		uiOPT();
+	</script>
+	<div class="toolBar">
+		<a id='customerBillEditSave' class="toolBar-a">保存</a>
+		<a data-add-back-btn="true" class="toolBar-a goBack" id="goBack"><span>« </span>返回</a>
+	</div>
+
+	<div class="editBox" style="background-color:#f9f9f9;" id='customerBillEditAddPostBox'>
+
+		<div class="editItem">
+			<span class="edit-title">客户名称</span>
+			<div class="input-box"><input id='customerName' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">欠款金额</span>
+			<div class="input-box"><input id='balance' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">欠款额度</span>
+			<div class="input-box"><input id='debtLimit' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">还款时间</span>
+			<div class="input-box"><input id='repayment' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+
+	</div>
+	
+	<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			// 时间控件
+	        var curr = new Date().getFullYear();
+			var opt = {
+			    preset: 'date', //日期
+			    display: 'modal', //显示方式 
+			    mode: 'scroller', //日期选择模式
+			    dateFormat: 'yy-mm-dd', // 日期格式
+			    setText: '确定', //确认按钮名称
+			    cancelText: '取消',//取消按钮名籍我
+			    dateOrder: 'yymmdd', //面板中日期排列格式
+			    dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+			    endYear:2020 //结束年份
+			};
+			$("#customerBillEditAddPostBox #repayment").mobiscroll(opt).date(opt);
+
+		    $(".goBack").tap(function(){
+		        window.history.back();
+		        return false;
+		    });
+
+		    setTimeout(function(){
+		    	$.mobile.loading('show');
+		    	$.get(SERVER + 'Customer/GetModelById?id=' + $.Request('id') + "&token=" + TOKEN,function(data){
+		    		var x = eval("("+data+")");
+		    		$('#customerBillEditAddPostBox #customerName').val(x.customerName);
+		    		$('#customerBillEditAddPostBox #balance').val(x.balance);
+		    		$('#customerBillEditAddPostBox #debtLimit').val(x.debtLimit);
+		    		$('#customerBillEditAddPostBox #repayment').val(x.repayment);
+		    		$.mobile.loading('hide');
+		    	});
+		    },100);
+
+		    $('#customerBillEditSave').tap(function(){
+				// Ajax 操作
+				$.mobile.loading('show');
+				var post = postData($('#customerBillEditAddPostBox'));
+				post.id = $.Request('id');
+				$.ajax({url: SERVER + "Customer/Edit?token=" + TOKEN,
+					data:post,
+					type:'post',
+					success: function(data){
+						var result = eval("("+data+")");
+						window.history.back();
+					}
+				});
+		    });
+		});
+	</script>
+</body>
+</html> 

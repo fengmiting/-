@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<script type="text/javascript">uiOPT();</script>
+	<div class="toolBar">
+		<a class="toolBar-a toolBar-a-checked" data-transition="slide" href="customerList.html">客户查询</a>
+		<a class="toolBar-a" data-transition="slide" href="customerAdd.html">新增客户</a>
+		<a class="toolBar-a" id="customerListDelete" >删除选中</a>
+		<a class="toolBar-a" id="customerListEdit" >修改选中</a>
+		<a class="toolBar-a" data-transition="slide" href="customerBill.html">客户账款</a>
+		<a class="toolBar-a" data-transition="slide" href="firmList.html">厂商查询</a>
+		<a class="toolBar-a" data-transition="slide" href="firmAdd.html">新增厂商</a>
+	</div>
+
+	<div id='customerListPostBox'>
+	<div class="searchBox" id="customerListSearchBox">
+		名称：<div class="lineBox"><input type="text" id="customerName" class="post-data glb-text" /></div>
+		手机：<div class="lineBox"><input type="text" id="mobile" class="post-data glb-text" /></div>
+		<a id="customerListSearchButton" class='toolBar-a'>搜索</a> <a class='toolBar-a'>清空</a>
+	</div>
+	</div>
+
+	<div id="customerListscrollBox" class="scrollBox">
+	<div class="scrollPanel">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td style="width:80px;" >选择</td>
+				<td style="width:80px;" >序号</td>
+				<td style="width:100px;">名称</td>
+				<td style="width:200px;">生日</td>
+				<td style="width:100px;">店员</td>
+				<td style="width:150px;">手机</td>
+				<td style="width:350px;">地址</td>
+				<td style="width:150px;">欠款</td>
+				<td style="width:100px;">上级客户</td>
+				<td style="width:200px;">备注</td>
+			</tr>
+		</table>
+		<div id="customerListscrollBoxContent" class="scrollBoxContent">
+		<div class="scrollPanelContent" style="float:left;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr id="customerListmoreTr" style="visibility: hidden;">
+				<td colspan="9" id="customerListmoreButton" class='moreButton'>
+					<a class="ui-link">当前（0/0） 点击加载更多..</a>
+				</td>
+			<td>
+		</table>
+		</div>
+		</div>
+	</div>
+	</div>
+
+	<!--设置UI-->
+	<script type="text/javascript">
+		$(function(){
+			// 设置高度
+			var resize = function(){
+				var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 2) - 10;
+				$("#customerListscrollBox").height(CXT_HEIGHT);
+				$("#customerListscrollBoxContent").height(CXT_HEIGHT - 50);
+			}
+			resize();
+
+			// 浏览器改变大小自动重新设置高度
+			$(window).resize(function(){
+				resize();
+			});
+		});
+	</script>
+
+	<!--移动模块-->
+	<script type="text/javascript">
+		// 数据块可以移动
+		var pScroll,cScroll;
+		setTimeout(function(){
+			pScroll = new iScroll('customerListscrollBox',{lockDirection:true,vScroll:false});
+			pScroll.refresh();
+
+			cScroll = new iScroll('customerListscrollBoxContent',{lockDirection:true,hScroll:false});
+			cScroll.refresh();
+		},100);
+	</script>
+
+	<!--Ajax获取数据-->
+	<script type="text/javascript">
+		$(function(){
+
+			var pagerIndex 		= 1,					// 当前页面
+				currentCount	= 0,					// 当前数据总条数
+				count	   		= 0;					// 数据总条数
+
+			setTimeout(function(){$.mobile.loading('show');},100);
+
+			// 获取数据总条数
+			var getCount = function(){
+				$.get(SERVER + "Customer/GetCount?token=" + TOKEN,function(data){
+					var result = eval("("+data+")");
+					if(result.Status == 'SUCCESS'){
+						count = result.Result.count;
+					}
+				});
+			}
+			getCount();
+
+			var getList = function(){
+				$('#customerListmoreTr').css({'visibility': 'hidden'});
+				$.mobile.loading('show');
+				$.ajax({url: SERVER + "Customer/GetList?token=" + TOKEN + "&page=" + pagerIndex,
+					data:postData($('#customerListSearchBox')),
+					type:'post',
+					success: function(data){
+						var result = eval("("+data+")");
+						if(result.Status == 'SUCCESS'){
+							for(var i in result.Result){
+								var item = $('<tr class="cl-tr">' +
+													'<td style="width:80px;"><input dataid="'+ result.Result[i].id +'" data-role="none" type="checkbox"></td>'+
+													'<td style="width:80px;" >'+ result.Result[i].id +'</td>' 				+
+													'<td style="width:100px;">'+ result.Result[i].customerName +'</td>' 	+
+													'<td style="width:200px;">'+ result.Result[i].birthday +'</td>' 		+
+													'<td style="width:100px;">'+ result.Result[i].managers +'</td>' 		+
+													'<td style="width:150px;">'+ result.Result[i].mobile +'</td>' 			+
+													'<td style="width:350px;">'+ result.Result[i].address +'</td>' 			+
+													'<td style="width:150px;">'+ result.Result[i].balance +'</td>' 			+
+													'<td style="width:100px;">'+ result.Result[i].higher +'</td>' 			+
+													'<td style="width:200px;">'+ result.Result[i].note +'</td>'				+
+											 '</tr>');
+								$('#customerListmoreTr').before(item);
+								$(item).tap(function(){
+									var cbox = $(this).find('input');
+									if(cbox.is(":checked")){
+									    cbox.prop("checked", false);
+									}
+									else{
+									    cbox.prop("checked", true);
+									}
+									return false;
+								});
+								currentCount ++;
+							}
+							pScroll.refresh();
+							cScroll.refresh();
+							$('#customerListmoreButton a').text('当前（'+ currentCount +'/'+ count +'） 点击加载更多..');
+							if(currentCount > 0){
+								$('#customerListmoreTr').css({'visibility': 'visible'});
+							}
+							if(currentCount == count){
+								$('#customerListmoreButton a').text('当前（'+ currentCount +'/'+ count +'） 没有更多数据了..');
+							}
+						}
+						$.mobile.loading('hide')
+					}
+				});
+
+			}
+
+			$('#customerListmoreButton').tap(function(){
+				//getCount();
+				//$('.cl-tr').remove();
+				//pagerIndex = 1;
+				//currentCount = 0;
+				//count = 0;
+				//getList();
+				if(currentCount == count && count != 0)
+				{
+					return;
+				}	
+				pagerIndex ++;
+				getList();
+			});
+
+			setTimeout(function(){
+				getList();
+			},100);
+
+
+			$('#customerListDelete').tap(function(){
+				var ids = '';
+				$.mobile.loading('show');
+
+				$('input[type="checkbox"]').each(function(){
+					if($(this).prop('checked')){
+						ids = ids + $(this).attr('dataid') + ',';
+					}
+				});
+
+				$.get(SERVER + "Customer/Delete?token=" + TOKEN + "&id=" + ids,function(data){
+					var r = eval("("+ data +")");
+					
+					$('input[type="checkbox"]').each(function(){
+						if($(this).prop('checked')){
+							$(this).parent().parent().hide();
+						}
+					});
+
+					alert(r.Status,r.Message);
+
+				});
+			});
+
+
+			$('#customerListEdit').tap(function(){
+				var id 	  = '',
+					count = 0;
+				$('input[type="checkbox"]').each(function(){
+					if($(this).prop('checked')){
+						id = $(this).attr('dataid');
+						count += 1;
+					}
+				});
+
+				if(count != 1){
+					alert('错误','只能选中一个进行修改');
+					return false;
+				}
+
+				$.mobile.changePage("customerEdit.html?id=" + id,"slide");
+			});
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+	<meta name="format-detection" content="telephone=no" />
+
+	<link href="css/default.css?id=12" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+
+	<link href="js/jm/jquery.mobile-1.4.2.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jm/jquery.mobile-1.4.2.js"></script>
+
+	<script type="text/javascript" src="js/iScroll.4.2.5.js"></script>
+
+	<link href="js/x-ui/x-ui-1.0.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" charset="utf-8" src="js/x-ui/x-ui-1.0.js"></script>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/global.js?v=22"></script>
+
+	<!--<script type="text/javascript" src="http://192.168.2.109:8080/target/target-script-min.js#anonymous"></script>-->
+	<script type="text/javascript">
+		// 用户登录token
+		var TOKEN = false,
+			USERS = false;
+	</script>
+
+	<style type="text/css">
+		.qk_span{float: right; padding-right: 20px; font-size: 12px; color:#999;}
+	</style>
+</head>
+<body style="overflow-y:hidden"> <!-- <input type=file accept="image/*"> -->
+<div id="main" ontouchmove="event.preventDefault()">
+	<nav id="nav">
+		<div class="nav-box">
+		<div class="title" style="text-indent:0px;"><img src="images/logo.png" style="margin-top:4px;"></div>
+		<div id="nav-scroller">
+		<div id="navs" class="scroller-bg">
+			<div style="background-position:-20px -10px;" class="nav-item"><a data-transition="slide" href="productList.html">货品管理</a></div>
+			<div style="background-position:-20px -50px;" class="nav-item"><a data-transition="slide" href="customerList.html">来往管理</a></div>
+			<div style="background-position:-20px -90px;" class="nav-item"><a data-transition="slide" href="purchaseDepotList.html">采购入库</a></div>
+			<div style="background-position:-20px -130px;" class="nav-item"><a data-transition="slide" href="purchaseOrderingList.html">采购订货</a></div>
+			<div style="background-position:-20px -175px;" class="nav-item"><a data-transition="slide" href="storesInAllocation.html">门店调入</a></div>
+			<div style="background-position:-20px -215px;" class="nav-item"><a data-transition="slide" href="storesOutList.html">门店调出</a></div>
+			<div style="background-position:-20px -255px;" class="nav-item"><a data-transition="slide" href="salesOrderList.html">销售订货</a></div>
+			<div style="background-position:-20px -298px;" class="nav-item"><a data-transition="slide" href="salesBillingList.html">销售开单</a></div>
+			<div style="background-position:-20px -338px;" class="nav-item"><a data-transition="slide" href="imageList.html">快速采购</a></div>
+			<!-- <div class="nav-item"><a data-transition="slide" href="#">盘点管理</a></div> -->
+			<div style="background-position:-20px -378px;" class="nav-item"><a data-transition="slide" href="statisCustomer.html">数据统计</a></div>
+			<div style="background-position:-20px -420px;" class="nav-item"><a data-transition="slide" href="sysConfig.html">系统设置</a></div>
+			<div style="background-position:-20px -458px;" class="nav-item"><a data-transition="slide" href="userHelp.html">用户帮助</a></div>
+			<div style="background-position:-20px -502px;" class="nav-item"><a data-transition="slide" href="index.html" id="quit">退出系统</a></div>
+			<script type="text/javascript">
+				$(function(){
+					$('#quit').tap(function(){
+						if(System.exit != undefined){
+							System.exit(0);
+						}
+						else{
+							alert('asd');
+						}
+						return false;
+					});
+				});
+			</script>
+		</div>
+		</div>
+		</div>
+	</nav>
+
+
+	<article>
+		<div id="loginInfo" class="title" style="text-align: center;">
+			请登陆
+		</div>
+		<div id="main-content" data-role="content" style="position: relative;">
+			<div data-role="page">
+				<div class="login-box">
+					<p class="login-title">欢迎登陆（iPad版）</p>
+					<form>
+					<table class="login-tb">
+						<tr>
+							<td>工号：</td>
+							<td><input id="loginName" class="glb-text" type="text" data-clear-btn="true" /></td>
+						</tr>
+						<tr>
+							<td>密码：</td>
+							<td><input id="userPwd" class="glb-text" type="password" data-clear-btn="true" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input class="login-btn" type="button" data-msgtext="Loading theme b" value="登陆系统" />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<p id="showMsg" style="color:#ff0000;display:none;"></p>
+							</td>
+						</tr>
+					</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</article>
+</div>
+
+<!--购物车数量选择器-->
+<div id="Cart-Box">
+	<p id="Cart-Title">选择参数</p>
+	<div id="Cart-Content">
+		<!-- 库存件数：<span id="Cart-Counts"></span> -->
+ 
+		<div id="Color-Box"></div>
+		<div id="Size-Box"></div>
+
+		<div style="padding:8px 0px;">
+			<a class="sub-btn">-</a><input id="Cart-Size" value='0' type="text" /><a class="add-btn">+</a>
+		</div>
+		<div id="Select-Box"></div>
+	</div>
+	<div id="Cart-Bottom"><a id="Cart-Botton">确定</a></div>
+</div>
+<script type="text/javascript">
+	var CartItemCount = 0,
+		CartList 	  = {},
+		CartCallBack  = function(){};
+	var CartBox = function(obj,callback){
+ 
+		CartCallBack  = callback;
+		CartItemCount = obj.counts;
+		//$('#Cart-Counts').html(CartItemCount);
+
+		var colors = obj.color.split(',');
+		for(var i in colors){
+			if(colors[i].length <=0) break;
+
+			var html = $('<a val="'+ colors[i] +'">'+ colors[i] +'</a>');
+			$('#Color-Box').append(html);
+			html.tap(function(){
+				$('#Color-Box a').attr('style','');
+				$('#Color-Box a').attr('ischeck','false');
+
+				$(this).css({'border':'solid 2px #FF8F00'});
+				$(this).attr('ischeck','true');
+			});
+		}
+
+		var sizes  = obj.size.split(',');
+		for(var i in sizes){
+			if(sizes[i].length <= 0) break;
+
+			var html = $('<a val="'+ sizes[i] +'">'+ sizes[i] +'</a>');
+			$('#Size-Box').append(html);
+			html.tap(function(){
+				$('#Size-Box a').attr('style','');
+				$('#Size-Box a').attr('ischeck','false');
+
+				$(this).css({'border':'solid 2px #FF8F00'});
+				$(this).attr('ischeck','true');
+			});
+		}
+
+		$('#Color-Box').children('a').eq(0).css({'border':'solid 2px #FF8F00'}).attr('ischeck','true');
+		$('#Size-Box').children('a').eq(0).css({'border':'solid 2px #FF8F00'}).attr('ischeck','true');
+
+		$('#Select-Box').html('');
+		for(var i in CartList){
+			if(i == obj.id){
+				for(var j in CartList[i]){
+					if(CartList[i][j].count > 0){
+						var html = $('<a val="'+ CartList[i][j].count +'">'+ CartList[i][j].color + "-" + CartList[i][j].size +'</a>');
+						$('#Select-Box').append(html);
+						html.tap(function(){
+							var val = $(this).html().split('-');
+							$('#Color-Box a').attr('style','').attr('ischeck','false');
+							$('#Size-Box a').attr('style','').attr('ischeck','false');
+							$('#Color-Box').find('a[val="'+ val[0] +'"]').css({'border':'solid 2px #FF8F00'}).attr('ischeck','true');
+							$('#Size-Box').find('a[val="'+ val[1] +'"]').css({'border':'solid 2px #FF8F00'}).attr('ischeck','true');
+							$('#Cart-Size').val($(this).attr('val'));
+						});
+					}
+				}
+			}
+		}
+		$('#Cart-Box').show();
+	}
+
+	// 数量加减
+	$(function(){
+
+		$('#Cart-Botton').tap(function(){
+			// 填充返回值
+			var result = {};
+			result.count = parseInt($('#Cart-Size').val());
+			result.color = $('#Color-Box a[ischeck="true"]').text();
+			result.size  = $('#Size-Box a[ischeck="true"]').text();
+
+			// 执行回调
+			CartCallBack(result);
+
+			// 清空数据
+			CartItemCount = 0;
+			$('#Cart-Size').val('0');
+			$('#Color-Box').html('');
+			$('#Size-Box').html('');
+			$('#Cart-Box').hide();
+			return false;
+		});
+
+		$('.sub-btn').tap(function(){
+			if($('#Cart-Size').val() <= 0){
+				return;				
+			}
+			$('#Cart-Size').val((parseInt($('#Cart-Size').val())) - 1);
+		});
+
+		$('.add-btn').tap(function(){
+			if(parseInt($('#Cart-Size').val()) >= CartItemCount){
+				alert("错误","库存不足");
+				return;				
+			}
+			$('#Cart-Size').val((parseInt($('#Cart-Size').val())) + 1);
+		});
+	});
+</script>
+
+<!--图片盒子-->
+<div id="Img-Box">
+	<div id="Img-Box-Scroll">
+		<div id="Img-Box-Content">
+
+		</div>
+		<a id="Img-Box-Close">X</a>
+	</div>
+</div>
+<script type="text/javascript">
+	var ImgBoxScroll;
+		ImgBoxScroll = new iScroll('Img-Box-Scroll');
+		ImgBoxScroll.refresh();
+
+	var ImgBox = function(imgs){
+		$('#Img-Box-Content').html('');
+		for(var i in imgs){
+			if(imgs[i].length <= 0) break;
+			var img = '<img src="'+ IMGWEB + imgs[i] +'" />';
+			$('#Img-Box-Content').append(img);
+		}
+		$('#Img-Box').show();
+		ImgBoxScroll.refresh();
+	}
+
+	$(function(){
+		$('#Img-Box-Close').tap(function(){
+			$('#Img-Box').hide();
+		});
+	});
+</script>
+
+<!--采购汇总-->
+<bubblebox id="cghz" class="bubbleboxcgddl">
+	<a class="toolBar-a" data-transition="slide" href="purchaseDepotCenter1.html">按金额汇总</a>
+	<a class="toolBar-a" data-transition="slide" href="purchaseDepotCenter2.html">按款号汇总</a>
+	<a class="toolBar-a" data-transition="slide" href="purchaseDepotCenter4.html">按厂商汇总</a>
+	<a class="toolBar-a" data-transition="slide" href="purchaseDepotCenter5.html">出入库汇总</a>
+</bubblebox>
+<script type="text/javascript">
+	var CGHZ = undefined;
+	$(function(){
+		CGHZ = $('#cghz').glbBubbleBox();
+	});
+</script>
+
+<!--小票-->
+<div id="Ticket-Box">
+	<div id="Ticket-Scroll">
+		<div id="Ticket-Content">
+			<div id="Ticket-Z"></div>
+			<iframe id="Ticket-IFM" scrolling="no" style="width:100%; height:1200px; border:none;" src=""></iframe>
+		</div>
+		<a id="Ticket-Close">X</a>
+	</div>
+</div>
+<script type="text/javascript">
+	var TicketScroll;
+		TicketScroll = new iScroll('Ticket-Scroll');
+		TicketScroll.refresh();
+
+	var Ticket = function(imgs){
+		$('#Ticket-Content').html('asdasd');
+		TicketScroll.refresh();
+	}
+
+	var ShowTicket = function(url){
+		$.mobile.loading('show', {  
+		    text: '正在生成小票...', 	//加载器中显示的文字  
+		    textVisible: true, 			//是否显示文字  
+		    theme: 'b',        			//加载器主题样式a-e  
+		    textonly: false,   			//是否只显示文字  
+		});
+
+		var isOnLoad = true; 
+		$('#Ticket-IFM').attr("src", url); 
+		$('#Ticket-IFM').load(function() { 
+			$.mobile.loading('hide');
+			$('#Ticket-Box').show();
+			TicketScroll.refresh();
+		}); 
+	}
+
+	$(function(){
+		$("#Ticket-Close").tap(function(){
+			$("#Ticket-Box").hide();
+		});
+	});
+</script>
+
+</body>
+</html>
+
+<!--全局数据-->
+<script type="text/javascript">
+	var GLOBALS = [],
+		CustomerInput = undefined,
+		CustomerBubbleList = undefined,
+		UserInput = undefined,
+		UserBubbleList = undefined;
+
+	var initData = function(){
+		
+		// 获取商品列表
+		$.get(SERVER + 'Product/GetAllList?token=' + TOKEN,function(data){
+			GLOBALS['ProductList'] = eval("("+data+")");
+		});
+
+		if(CustomerBubbleList !== undefined) CustomerBubbleList.element.remove();
+		// 获取客户列表
+		$.get(SERVER + 'Customer/GetListByToken?token=' + TOKEN,function(data){
+			var result = eval("("+ data +")");
+			GLOBALS['CustomerList'] = result.Result;
+			CustomerBubbleList = $.bubbleList({
+					parent: $('body'),
+					data  : GLOBALS['CustomerList'],
+					bindCallFun: function(item,data){
+						//item.text(data.customerName);
+						item.html(
+							'<span class="qk_data">'+ data.customerName +'</span>' +
+							'<span e="'+ data.balance +'" id="qk_'+ data.id +'" class="qk_span">欠款'+ data.balance +'</span>'
+						);
+						item.attr('did',data.id);
+					},
+					selectCallFun:function(item){
+						CustomerInput.val(item.find('.qk_data').text());
+						CustomerInput.attr('did',item.attr('did'));
+						$('bubblebox').hide();
+					}
+			});
+		});
+
+		if(UserBubbleList !== undefined) UserBubbleList.element.remove();
+		// 获取员工列表
+		$.get(SERVER + 'Users/GetListByToken?token=' + TOKEN,function(data){
+			var result = eval("("+ data +")");
+			GLOBALS['UserList'] = result;
+			UserBubbleList = $.bubbleList({
+					parent: $('body'),
+					data  : GLOBALS['UserList'],
+					bindCallFun: function(item,data){
+						item.text(data.name);
+					},
+					selectCallFun:function(item){
+						UserInput.val(item.text());
+						$('bubblebox').hide();
+					}			
+			});
+		});
+	}
+</script>
+
+<!--初始化-->
+<script type="text/javascript">
+    app.initialize();
+	$(function(){
+		$(document).ajaxStop(function(){
+			$.mobile.loading('hide');
+		});
+	})
+</script>
+
+<!--UI操作-->
+<script type="text/javascript">
+
+	// 让导航可以滑动
+	var navScroll = null;
+	window.addEventListener("load",function(){
+		navScroll = new iScroll('nav-scroller');
+	},false);
+
+
+	// jQuery
+	$(function(){
+
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41;
+			$("#nav-scroller").height(CXT_HEIGHT);
+			$("#main-content").height(CXT_HEIGHT);
+		}
+		resize();
+
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+	})
+</script>
+
+<!--公用下拉框-->
+<script type="text/javascript">
+	var GlobalDDL = $.bubbleList({
+			parent: $('body'),
+			data  : {},
+			bindCallFun: function(item,data){
+
+			},
+			selectCallFun:function(item){
+				$('bubblebox').hide();
+			}
+	});
+
+	var setGlobalDDL = function(data,el){
+		var list = GlobalDDL.element.find('list');
+		list.html('');
+		for(var i in data){
+			if(data[i] == '') continue;
+			var item = $('<item>'+ data[i] +'</item>');
+			item.click(function(){
+				el.val($(this).text());
+				$('bubblebox').hide();
+			});
+			list.append(item);
+		}
+		GlobalDDL.show(el);
+	};
+</script>
+
+<!--数据操作-->
+<script type="text/javascript">
+	$(function(){
+		// 未登录全不允许操作
+		$("#navs a").tap(function(){
+			if(TOKEN === false){
+				return false;
+			}
+			if(!$(".ui-loader").is(":hidden")){
+				//return false;
+			}
+			$(".nav-item").css({'background-color':'#fff'});
+			$(this).parent().css({'background-color':'#e6e6e6'});
+		});
+
+		// 登录前清空上次登录数据
+		$("#quit").tap(function(){
+			navigator.app.exitApp();
+			$('#loginInfo').html("请登录");
+			TOKEN = false;
+		});
+
+
+		// 登陆
+		$(".login-btn").tap(function(){
+		    $.mobile.loading('show', {  
+		        text: '登录中，请稍后...', 	//加载器中显示的文字  
+		        textVisible: true, 			//是否显示文字  
+		        theme: 'b',        			//加载器主题样式a-e  
+		        textonly: false,   			//是否只显示文字  
+		    });
+			$.ajax({url: SERVER + "Users/login",
+					data:{'loginName':$('#loginName').val(),'userPwd':$('#userPwd').val()},
+					type:'post',
+					success: function(data){
+						var result = eval("("+data+")");
+						if(result['Status'] == 'ERROR'){
+							$('#showMsg').html(result['Message']).show();
+						}else{
+							$.mobile.changePage ('main.html','slide',false,false);
+							$('#loginInfo').html("当前账号："+ result['Result']['loginName'] +"&nbsp;&nbsp; 职位："+ result['Result']['postName'] +" &nbsp;&nbsp; 店面：" + result['Result']['shopsName']);
+							TOKEN = result['Result']['token'];
+							USERS = result['Result'];
+							console.log(USERS);
+							initData();
+						}
+						//$.mobile.loading('hide');
+					},
+					error:function(){
+						$('#showMsg').html('系统错误,可能正在维护,请稍后再试!').show();
+						//$.mobile.loading('hide');
+					}
+			});
+			return false;
+		});
+	});
+</script>

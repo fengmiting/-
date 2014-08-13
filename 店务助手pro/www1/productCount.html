@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<script type="text/javascript">uiOPT();</script>
+	<div class="toolBar">
+		<a data-transition="slide" class="toolBar-a toolBar-a-checked" href="productCount.html">当前库存</a>
+		<a data-transition="slide" class="toolBar-a" href="productType.html">库存分布</a>
+		<a data-transition="slide" href="productList.html" class="toolBar-a">货品查询</a>
+		<a data-transition="slide" href="productAdd.html" class="toolBar-a">新增货品+</a>
+		<!--<a class="toolBar-a">批量调价</a>
+		<a class="toolBar-a">批量停用</a>
+		<a class="toolBar-a">基本设置</a>-->
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			$('.cghz').tap(function(){
+				CGHZ.show($(this));
+			});
+		});
+	</script>
+	
+	<div id='productTypePostBox'>
+	<div class="searchBox">
+		款号 <div class="lineBox" style="width:250px;"><input type="text" id="code" class="post-data glb-text" /></div>
+		<a id="productTypesearchButton" class='toolBar-a'>搜索</a> <a id='productTypePostBoxCl-button' class='toolBar-a'>清空</a>
+	</div>
+	</div>
+
+	<div id="productTypescrollBox" class="scrollBox">
+	<div class="scrollPanel">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td style="width:250px;" >商品名称</td>
+				<td style="width:200px;" >款号</td>
+				<td style="width:100px;" >库存</td>
+				<td style="width:800px;" >入库时间</td>
+			</tr>
+		</table>
+		<div id="productTypescrollBoxContent" class="scrollBoxContent" style="height: 410px;overflow: hidden;">
+		<div class="scrollPanelContent" style="float:left;">
+		<table border="0" cellpadding="2" cellspacing="0" id="dataTable">
+			<tr id="productTypemoreTr" style="visibility: hidden;">
+				<td colspan="11" id="productTypemoreButton" style='text-align: center;'>
+					<a class="ui-link">当前（0/0） 点击加载更多..</a>
+				</td>
+			<td>
+		</table>
+		</div>
+		</div>
+	</div>
+	</div>
+	
+<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+
+<!--设置UI data-prefetch -->
+<script type="text/javascript">
+	$(function(){
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 2) - 10;
+			$("#scrollBox").height(CXT_HEIGHT);
+			$("#scrollBoxContent").height(CXT_HEIGHT - 50);
+		}
+		resize();
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+ 
+	});
+</script>
+
+<!--移动模块-->
+<script type="text/javascript">
+	// 数据块可以移动
+	var productTypescrollBox,productTypescrollBoxContent;
+	setTimeout(function(){
+		productTypescrollBox = new iScroll('productTypescrollBox',{lockDirection:true,vScroll:false});
+		productTypescrollBox.refresh();
+
+		productTypescrollBoxContent = new iScroll('productTypescrollBoxContent',{lockDirection:true,hScroll:false});
+		productTypescrollBoxContent.refresh();
+	},100);
+</script>
+
+<!--数据绑定-->
+<script type="text/javascript">
+	$(function(){
+		var pagerIndex 		= 1,					// 当前页面
+			currentCount	= 0,					// 当前数据总条数
+			count	   		= 0;					// 数据总条数
+
+		// 获取数据
+		var loadData = function(){
+			$.mobile.loading('show');
+			$('#productTypemoreTr').css({'visibility': 'hidden'});
+			$.ajax({url: SERVER + "Product/GetList?mode=0&token=" + TOKEN + "&page=" + pagerIndex,
+				data:postData($('#productTypePostBox')),
+				type:'post',
+				success: function(data){
+					var result = eval("("+data+")");
+					if(result.Status == 'SUCCESS'){
+						for(var i in result.Result){
+							var item = $('<tr did="'+ result.Result[i].id +'" class="cl-tr">' 	+
+											'<td style="width:250px;" >'+ result.Result[i].name +'</td>' +
+											'<td style="width:200px;" >'+ result.Result[i].code +'</td>' +
+											'<td style="width:100px;" >'+ result.Result[i].counts +'</td>' +
+											'<td style="width:800px;" >'+ result.Result[i].createTime +'</td>' +
+										'</tr>');
+							$('#productTypemoreTr').before(item);
+							currentCount ++;
+
+						}
+						$('#productTypemoreButton a').text('当前（'+ currentCount +'/'+ count +'） 点击加载更多..');
+						if(currentCount > 0){
+							$('#productTypemoreTr').css({'visibility': 'visible'});
+						}
+						if(currentCount == count){
+							$('#productTypemoreButton a').text('当前（'+ currentCount +'/'+ count +'） 没有更多数据了..');
+						}
+					}
+					productTypescrollBox.refresh();
+					productTypescrollBoxContent.refresh();
+					$.mobile.loading('hide');
+				}
+			});
+		}
+
+		// 点击加载更多数据
+		$('#productTypemoreButton').tap(function(){
+			if(currentCount == count && count != 0){
+				return;
+			}
+			pagerIndex ++;
+			loadData();
+		});
+
+		// 获取数据总条数
+		$.get(SERVER + "Product/GetListCount?mode=0&token=" + TOKEN,function(data){
+			var result = eval("("+data+")");
+			if(result.Status == 'ERROR'){
+				alert(result.Status,result.Message);
+				return;
+			}
+			count = result.Result;
+		});
+
+		// 搜索
+		$('#productTypesearchButton').tap(function(){
+			pagerIndex = 1;
+			currentCount = 0;
+			$('.cl-tr').remove();
+			loadData();
+			return false;
+		});
+
+		// 开启定时器，延时加载
+		setTimeout(function(){
+			loadData();
+		},100);
+
+		// 清空
+		$('#productTypePostBoxCl-button').tap(function(){
+			$('#productTypePostBox input').val('');
+		});
+	});
+</script>
+</body>
+</html>

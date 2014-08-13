@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<link href="css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		uiOPT();
+		setTimeout(function(){
+			//$.mobile.loading('show');
+		},100);
+	</script>
+	<div class="toolBar">
+		<a id='customerSave' class="toolBar-a">保存</a>
+		<a data-add-back-btn="true" class="toolBar-a goBack" id="goBack"><span>« </span>返回</a>
+	</div>
+
+	<div class="editBox" style="background-color:#f9f9f9;" id='customerAddPostBox'>
+
+		<div class="editItem">
+			<span class="edit-title">名称</span>
+			<div class="input-box"><input id='customerName' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">生日</span>
+			<div class="input-box"><input id='birthday' placeholder="点击请选择" readonly="readonly" class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">店员</span>
+			<div class="input-box"><input id='managers' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">上级客户</span>
+			<div class="input-box" style="width:150px;"><input value='无' id='higher' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">手机</span>
+			<div class="input-box" style="width:200px;"><input id='mobile' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">地址</span>
+			<div class="input-box"><input id='address' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">备注</span>
+			<div class="input-box"><input id='note' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">欠款报警</span>
+			<div class="input-box" style="width:150px;"><input id='debtLimit' value="0" class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+			<span class="prompt">客户的欠款达到这个额度后台会自动报警，并阻止开单</span>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">照片</span>
+			<div class="input-box"><input id='picture' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			// 时间控件
+            var curr = new Date().getFullYear();
+			var opt = {
+		        preset: 'date', //日期
+		        display: 'modal', //显示方式 
+		        mode: 'scroller', //日期选择模式
+		        dateFormat: 'yy-mm-dd', // 日期格式
+		        setText: '确定', //确认按钮名称
+		        cancelText: '取消',//取消按钮名籍我
+		        dateOrder: 'yymmdd', //面板中日期排列格式
+		        dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+		        endYear:2020 //结束年份
+		    };
+
+			$("#birthday").mobiscroll(opt).date(opt);
+
+		    $(".goBack").tap(function(){
+		        window.history.back();
+		        return false;
+		    });
+		});
+	</script>
+
+	<!--数据提交-->
+	<script type="text/javascript">
+		$(function(){
+
+			$('#customerSave').tap(function(){
+				$.mobile.loading('show');
+				$.ajax({url: SERVER + "Customer/Insert?token=" + TOKEN,
+					data:postData($('#customerAddPostBox')),
+					type:'post',
+					success: function(data){
+						var result = eval("("+data+")");
+						if(result.Status == 'SUCCESS'){
+							alert('提示','体统提示：客户添加成功。');
+							initData();
+						}else{
+							alert('提示','体统提示：客户添加失败，请稍后再试');
+						}
+						$.mobile.loading('hide');
+					}
+				});
+			});
+
+		});
+	</script>
+</body>
+</html> 

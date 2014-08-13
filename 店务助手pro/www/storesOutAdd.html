@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<style type="text/css">
+		#storesOutAddPostBox .lineBox{width:80px;}
+		#storesOutAddPostBox .ui-input-text{margin:3px 0px;}
+		.storesOutAddTd{text-align: center; background-color:#f8f9f9;}
+		.th .storesOutAddTd{background-color: #BEBEBE;}
+		.storesOutAddTd .lineBox{width:98%;}
+	</style>
+	<link href="css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		uiOPT();
+	</script>
+
+	<div class="toolBar">
+		<a class="toolBar-a" id="storesOutAddSaveButton">保存</a>
+		<a class="toolBar-a goBack"><span>« </span>返回</a>
+		<a class="toolBar-a" id="jrdh-btn">今日到货</a>
+	</div>
+
+	<div id='storesOutAddPostBox'>
+	<div class="searchBox">
+		送货人：<div class="lineBox" style="width: 192px;"><input type="text" id="sender" class="post-data glb-text" /></div>
+		接收店：<div class="lineBox" style="width: 192px;"><input type="text" id="recvshop" class="post-data glb-text" /></div>
+		<input type="hidden" id="totalprice" />
+	</div>
+	<div class="searchBox">
+		日期：<div class="lineBox" style="width:108px"><input readonly="readonly" placeholder="点击选择" type="text" id="selecttime" class="post-data glb-text" /></div>
+		备：<div class="lineBox" style="width:107px;"><input type="text" id="remark" class="post-data glb-text" /></div>
+		总数：<div class="lineBox"><input type="text" value="0" readonly="readonly" id="counts" class="post-data glb-text" /></div>
+	</div>
+	</div>
+
+	<div id="storesOutAddscrollBox" class="scrollBox" style="padding:20px 8px; overflow:hidden;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td class="storesOutAddTd" style="width:32px;">序号</td>
+				<td class="storesOutAddTd" style="width:140px;">货品</td>
+				<td class="storesOutAddTd" style="width:60px;">颜色</td>
+				<td class="storesOutAddTd" style="width:60px;">尺码</td>
+				<td class="storesOutAddTd" style="width:60px;">数量</td>
+				<td class="storesOutAddTd" style="width:60px;">操作</td>
+			</tr>
+		</table>
+
+		<div id="storesOutAddscrollBoxA" style="position: relative;">
+		<div style="padding-bottom:300px;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">1<input type="hidden" value="1" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">2<input type="hidden" value="2" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">3<input type="hidden" value="3" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">4<input type="hidden" value="4" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">5<input type="hidden" value="5" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">6<input type="hidden" value="6" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">7<input type="hidden" value="7" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">8<input type="hidden" value="8" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">9<input type="hidden" value="9" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">10<input type="hidden" value="10" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">11<input type="hidden" value="11" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+			<tr>
+				<td class="storesOutAddTd" style="width:32px;text-align: center;">12<input type="hidden" value="12" postInput="number" />
+					<input type="hidden" postInput="unitprice" /> 		<!--单价-->
+					<input type="hidden" postInput="totalprice" /> 		<!--总价-->
+					<input type="hidden" postInput="purchasePrice" /> 	<!--进货价-->
+					<input type="hidden" postInput="retailPrice" /> 	<!--零售价-->
+					<input type="hidden" postInput="packagePrice" /> 	<!--打包价-->
+					<input type="hidden" postInput="zeroGrantPrice" /> 	<!--零批价-->
+				</td>
+				<td class="storesOutAddTd" style="width:140px;">
+					<div class="lineBox"><input type="text" postInput="product" class="post-data glb-text" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="color" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" placeholder="点击选择" readonly="readonly" postInput="size" class="post-data glb-text"/></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;">
+					<div class="lineBox"><input type="text" postInput="counts" class="post-data glb-text" placeholder="0" /></div>
+				</td>
+				<td class="storesOutAddTd" style="width:60px;"><a class="toolBar-a dpdelBtns">删除</a></td>
+			</tr>
+		</table>
+		</div>
+		</div>
+	</div>
+
+<!--DropDownList控件-->
+<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+
+<!--设置UI-->
+<script type="text/javascript">
+	$(function(){
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 3) - 20;
+			$("#storesOutAddscrollBoxA").height(CXT_HEIGHT);
+		}
+		resize();
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+
+		//数据块可以移动
+		var storesOutAddpScroll;
+		setTimeout(function(){
+			storesOutAddpScroll = new iScroll('storesOutAddscrollBoxA');
+			storesOutAddpScroll.refresh();
+		},100);
+
+		$(document).bind( "pageshow", function( event, prevPage){
+			if(storesOutAddpScroll !== undefined){
+				storesOutAddpScroll.refresh();
+			}
+		});
+
+		// 时间控件
+        var curr = new Date().getFullYear();
+		var opt = {
+	        preset: 'date', //日期
+	        display: 'modal', //显示方式 
+	        mode: 'scroller', //日期选择模式
+	        dateFormat: 'yy-mm-dd', // 日期格式
+	        setText: '确定', //确认按钮名称
+	        cancelText: '取消',//取消按钮名籍我
+	        dateOrder: 'yymmdd', //面板中日期排列格式
+	        dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+	        endYear:2020 //结束年份
+	    };
+		$("#selecttime").mobiscroll(opt).date(opt);
+
+		// 返回
+		$(".goBack").tap(function(){
+		    window.history.back();
+		    return false;
+		});
+	});
+</script>
+
+<!--数据操作-->
+<script type="text/javascript">
+	$(function(){
+		$('#storesOutAddscrollBoxA input[postInput="product"]').bind('input propertychange',function(){
+			$.smartTips.show({
+				trigger 	: 	$(this),
+				data 		: 	GLOBALS['ProductList'],
+				field		: 	Array('id','code','name'),
+				attr		: 	Array('purchasePrice','code','retailPrice','packagePrice','zeroGrantPrice'),
+				key			: 	'name',
+				callback	: 	function(el,item){
+					
+					var parent 		= el.parent().parent().parent().parent();
+					parent.find('input[postInput="unitprice"]').val(item.attr('purchasePrice'));
+					parent.find('input[postInput="purchasePrice"]').val(item.attr('purchasePrice'));
+					parent.find('input[postInput="retailPrice"]').val(item.attr('retailPrice'));
+					parent.find('input[postInput="packagePrice"]').val(item.attr('packagePrice'));
+					parent.find('input[postInput="zeroGrantPrice"]').val(item.attr('zeroGrantPrice'));
+
+					// 总价
+					// var totalprice = parent.find('input[postinput="counts"]').val() * item.attr('purchasePrice');
+					// parent.find('input[postInput="totalprice"]').val(totalprice);
+				}
+			});
+		});
+
+		// 删除数据
+		$('.dpdelBtns').bind('tap',function(){
+			var tr = $(this).parent().parent();
+			tr.find('input').val('');
+			statistics();
+		});
+
+		// 获取所有颜色
+		var colorList 	= undefined,
+			colorInput	= undefined;
+		$.get(SERVER + 'Color/GetList?token=' + TOKEN,function(data){
+			var data = eval("("+data+")");
+			// 颜色选择框
+			var colorBubbleList = $.bubbleList({
+				parent: $('body'),
+				data  : data.Result.Color,
+				bindCallFun: function(item,data){
+					item.text(data.color);
+				},
+				selectCallFun:function(item){
+					colorInput.val(item.text());
+					$('bubblebox').hide();
+				}
+			});
+			// 显示
+			$('#storesOutAddscrollBoxA input[postInput="color"]').focus(function(){
+				colorInput = $(this);
+				colorBubbleList.show($(this));
+			});
+		});
+
+		// 获取所有尺寸
+		var sizeList 	= undefined,
+			sizeInput 	= undefined;
+		$.get(SERVER + 'Size/GetList?token=' + TOKEN,function(data){
+			var data = eval("("+data+")");
+			// 尺寸选择框
+			var sizeBubbleList = $.bubbleList({
+				parent: $('body'),
+				data  : data.Result.Size,
+				bindCallFun: function(item,data){
+					item.text(data.size);
+				},
+				selectCallFun:function(item){
+					sizeInput.val(item.text());
+					$('bubblebox').hide();
+				}
+			});
+			// 显示
+			$('#storesOutAddscrollBoxA input[postInput="size"]').focus(function(){
+				sizeInput = $(this);
+				sizeBubbleList.show($(this));
+			});
+		});
+	});
+</script>
+
+<!--数量，价格-->
+<script type="text/javascript">
+	$(function(){
+
+		$('#storesOutAddscrollBoxA input[postinput="counts"]').bind('input propertychange',function(){
+			var counts 		= 0,
+				totalprice	= 0,
+				pric 		= 0,
+				parent 		= $(this).parent().parent().parent().parent();
+
+			// 调价
+			pric = parent.find('input[postinput="purchasePrice"]').val() * $(this).val();
+			parent.find('input[postinput="totalprice"]').val(pric);
+
+			// 获取总数
+			$('#storesOutAddscrollBoxA input[postinput="counts"]').each(function(){
+				if(!isNaN(parseInt($(this).val()))){
+					counts += parseInt($(this).val());
+				}
+			});
+
+			// 获取总价格
+			$('#storesOutAddscrollBoxA input[postinput="totalprice"]').each(function(){
+				if(!isNaN(parseInt($(this).val()))){
+					totalprice += parseInt($(this).val());
+				}
+			});			
+ 
+			$('#storesOutAddPostBox #counts').val(counts);
+			$('#storesOutAddPostBox #totalprice').val(totalprice);
+		});
+
+	});
+</script>
+
+<!--数据提交-->
+<script type="text/javascript">
+	$(function(){
+		$('#storesOutAddSaveButton').tap(function(){
+			$.mobile.loading('show');
+			var post = postData($('#storesOutAddPostBox'));
+				post.sendshop = USERS.shopsName;
+				post.sendshoptoken = USERS.token;
+				post.totalprice = $('#storesOutAddPostBox #totalprice').val();
+			$.ajax({url: SERVER + "StoresForms/Add?token=" + TOKEN,
+				data:post,
+				type:'post',
+				success: function(data){
+					var result = eval("("+data+")");
+					if(result.Status == 'ERROR'){
+						alert(result.Status,result.Message);
+						return;
+					}
+
+					// 添加入库的产品
+					var formId 		= result.Result.Id,
+						batch  		= result.Result.Batch,
+						recvshop	= result.Result.RecvShop,
+						recvtoken 	= result.Result.RecvToken,
+						list   		= {},
+						count  		= 0;
+					$('#storesOutAddscrollBoxA tr').each(function(){
+
+						if(!isNaN(parseInt($(this).find('input[postInput="counts"]').val()))){
+							item = {}
+							$(this).find('input').each(function(){
+								item[$(this).attr('postInput')] = $(this).val();
+							});
+							var productInfo 		= $(this).find('input[postInput="product"]').val().split('/');
+							item['formsid'] 		= formId;
+							item['token'] 			= TOKEN;
+							item['batch'] 			= batch;
+							item['recvshop']		= recvshop;
+							item['recvshoptoken']	= recvtoken;
+							item['sendshop']		= USERS.shopsName;
+							item['sendshoptoken'] 	= USERS.token;
+							item['productcode'] 	= productInfo[1];
+							item['productid']		= productInfo[0];
+							item['product']			= productInfo[2];
+							item['firm']			= $('#storesOutAddPostBox #firm').val();
+							list[count] 			= item;
+							count ++;
+						}
+					});
+					count = 0;
+					
+					// POST
+					$.ajax({url: SERVER + "Stores/Add?token=" + TOKEN,
+						data: list,
+						type: 'post',
+						success: function(data){
+							var rst = eval("("+ data +")");
+							alert(rst.Status,rst.Message);
+							$.mobile.loading('hide');
+						}
+					});
+							$.mobile.changePage('storesOutList.html');
+				}
+			});
+		});
+	});
+</script>
+
+<!--今日到货-->
+<script type="text/javascript">
+	$(function(){
+		$('#jrdh-btn').tap(function(){
+			$.get(SERVER + "Product/GetToDayList?token=" + TOKEN,function(data){
+				data = eval("("+ data +")");
+				if(data.Status == 'ERROR'){
+					alert(data.Status,data.Message);
+					return;
+				}
+
+				var i = 0;
+				$('#storesOutAddscrollBoxA tr').each(function(){
+					if(data.Result[i] == undefined) return;
+					$(this).find('input').each(function(){
+						var attr = $(this).attr('postInput');
+						$(this).val(data.Result[i][attr]);
+					});
+					var proInfo = data.Result[i].id + "/" + data.Result[i].code + "/" + data.Result[i].name + "/";
+					$(this).find('input[postinput="number"]').val(i + 1);
+					$(this).find('input[postinput="product"]').val(proInfo);
+					$(this).find('input[postinput="color"]').val('');
+					$(this).find('input[postinput="size"]').val('');
+					i++;
+				});
+			 });
+		});
+	});
+</script>
+</body>
+</html>

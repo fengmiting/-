@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<script type="text/javascript">
+		uiOPT();
+		setTimeout(function(){
+			$.mobile.loading('show');
+		},100);
+		function bindSizeGroup(addItem){
+			$.get(SERVER + 'SizeGroup/GetList?token=' + TOKEN,function(data){
+				var data = eval("("+data+")");
+				if(data.Status == 'SUCCESS'){
+					for(var item in data.Result){
+						addItem(data.Result[item].id,data.Result[item].sizeGroup);
+					}
+				}
+				$.mobile.loading('hide');
+			});
+		}
+	</script>
+	<div class="toolBar">
+		<a id='sizeSave' class="toolBar-a">保存</a>
+		<a data-add-back-btn="true" class="toolBar-a goBack" id="goBack"><span>« </span>返回</a>
+	</div>
+
+	<div class="editBox" style="background-color:#f9f9f9;" id='sizeAddPostBox'>
+		<div class="editItem">
+			<span class="edit-title">尺码组</span>
+			<div class="input-box">
+				<dropdownlist dataBind="bindSizeGroup" id="sizeGroupDDL" textBoxId="sizeGroup" valBoxClass="post-data" valBoxId="sizeGroupId" textBoxClass="post-data glb-text">
+				</dropdownlist>
+			</div>
+			<a class="toolBar-a" data-transition="slide" href="sizeGroupAdd.html">添加尺码组</a>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">尺码</span>
+			<div class="input-box"><input id='size' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+
+		<div class="editItem">
+			<span class="edit-title">显示顺序</span>
+			<div class="input-box" style="width:100px;"><input id='sort' value="0" class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		    $(".goBack").tap(function(){
+		        window.history.back();
+		        return false;
+		    });
+
+		    $('#sizeSave').tap(function(){
+				// Ajax 操作
+				$.mobile.loading('show');
+				$.ajax({url: SERVER + "Size/Add?token=" + TOKEN,
+					data:postData($('#sizeAddPostBox')),
+					type:'post',
+					success: function(data){
+						var result = eval("("+data+")");
+						alert('添加尺码',result['Message']);
+					}
+				});
+		    });
+		});
+	</script>
+</body>
+</html> 

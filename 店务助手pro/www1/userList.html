@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<script type="text/javascript">uiOPT();</script>
+
+	<div class="toolBar" style="position: relative;">
+		<a data-transition="slide" class="toolBar-a" href="sysConfig.html">系统设置</a>
+		<a data-transition="slide" class="toolBar-a toolBar-a-checked" href="userList.html">人员列表</a>
+		<a data-transition="slide" class="toolBar-a" href="addUser.html">新增人员</a>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('.cghz').tap(function(){
+				CGHZ.show($(this));
+			});
+		});
+	</script>
+	
+	<div id='userListPostBox'>
+	</div>
+
+	<div id="userListscrollBox" class="scrollBox">
+	<div class="scrollPanel">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td style="width:250px;" >员工姓名</td>
+				<td style="width:950px;" >登录工号</td>
+			</tr>
+		</table>
+		<div id="userListscrollBoxContent" class="scrollBoxContent" style="height: 410px;overflow: hidden;">
+		<div class="scrollPanelContent" style="float:left;">
+		<table border="0" cellpadding="2" cellspacing="0" id="serListdataTable">
+
+		</table>
+		</div>
+		</div>
+	</div>
+	</div>
+ 
+<!--设置UI data-prefetch -->
+<script type="text/javascript">
+	$(function(){
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 2) - 10;
+			$("#scrollBox").height(CXT_HEIGHT);
+			$("#scrollBoxContent").height(CXT_HEIGHT - 50);
+		}
+		resize();
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+	});
+</script>
+
+<!--移动模块-->
+<script type="text/javascript">
+	// 数据块可以移动
+	var userListscrollBox,userListscrollBoxContent;
+	setTimeout(function(){
+		userListscrollBox = new iScroll('userListscrollBox',{lockDirection:true,vScroll:false});
+		userListscrollBox.refresh();
+
+		userListscrollBoxContent = new iScroll('userListscrollBoxContent',{lockDirection:true,hScroll:false});
+		userListscrollBoxContent.refresh();
+	},100);
+</script>
+
+<!--数据绑定-->
+<script type="text/javascript">
+	$(function(){
+		setTimeout(function(){
+			$.mobile.loading('show');
+			$.get(SERVER + "Users/GetListByToken?token="+TOKEN,function(data){
+				var result = eval("("+ data +")");
+
+				for(var i in result){
+					var item = $('<tr loginName="'+ result[i].loginName +'">' +
+									'<td style="width:250px;" >'+ result[i].name +'</td>' +
+									'<td style="width:950px;" >'+ result[i].loginName +'</td>' +
+								 '</tr>');
+
+					$('#serListdataTable').append(item);
+					item.tap(function(){
+						if(USERS.postId == 0){
+							$.mobile.changePage("editUser.html?id=" + $(this).attr('loginName'),"slide");
+						}else{
+							if(USERS.loginName == $(this).attr('loginName')){
+								$.mobile.changePage("editUser.html?id=" + $(this).attr('loginName'),"slide");
+							}
+						}
+					});
+				}
+			});
+		},100);
+	});
+</script>
+</body>
+</html>

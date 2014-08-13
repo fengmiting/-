@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<div class="toolBar">
+		<a id='addUserEditSave' class="toolBar-a">保存</a>
+		<a data-add-back-btn="true" class="toolBar-a goBack"><span>« </span>返回</a>
+	</div>
+
+	<div class="editBox" style="background-color:#f9f9f9;" id='addUserEditAddPostBox'>
+		<div class="editItem">
+			<span class="edit-title">店员姓名</span>
+			<div class="input-box"><input id='name' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+		<div class="editItem">
+			<span class="edit-title">登录工号</span>
+			<div class="input-box"><input id='loginName' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+			<span class="prompt">请使用店面简拼加编号，如：HES001 </span>
+		</div>
+		<div class="editItem">
+			<span class="edit-title">登录密码</span>
+			<div class="input-box"><input id='passWord' class="post-data glb-text" data-clear-btn="true" type="password" /></div>
+		</div>
+		<div class="editItem">
+			<span class="edit-title">联系电话</span>
+			<div class="input-box"><input id='phone' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+	</div>
+ 
+<script type="text/javascript">
+	$(function(){
+		$(".goBack").tap(function(){
+			window.history.back();
+		});
+
+		// 添加数据
+		$("#addUserEditSave").tap(function(){
+
+			// Ajax 操作
+			$.mobile.loading('show');
+
+			var post  		= postData($('#addUserEditAddPostBox'));
+			post.shopsId 	= USERS.shopsId;
+			post.shopsName 	= USERS.shopsName;
+			
+			$.ajax({url: SERVER + "Users/Add?token=" + TOKEN,
+				data:post,
+				type:'post',
+				success: function(data){
+					var result = eval("("+data+")");
+					alert(result.Status,result.Message);
+					initData();
+					$.mobile.loading('hide');
+				}
+			});
+
+		});
+	});
+</script>
+</body>
+</html> 

@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<script type="text/javascript">uiOPT();</script>
+	<link href="css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+
+	<div class="toolBar" style="position: relative;">
+		<a data-transition="slide" class="toolBar-a toolBar-a-checked" href="salesBillingList.html">按批次查</a>
+		<a data-transition="slide" class="toolBar-a" href="salesBillingDetailed.html">按明细查</a>
+		<a data-transition="slide" class="toolBar-a" href="salesBillingAdd.html">开单</a>
+		<a data-transition="slide" class="toolBar-a" href="salesBillingOrderList.html">按订单开单</a>
+		<a data-transition="slide" class="toolBar-a" id="salesBillingOrderListDelete" >删除选中</a>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('.cghz').tap(function(){
+				CGHZ.show($(this));
+			});
+		});
+	</script>
+	
+	<div id='salesBillingListPostBox'>
+	<div class="searchBox">
+		日期从：<div class="lineBox" style="width:100px;"><input type="text" id="startTime" class="post-data glb-text" /></div>
+		到 <div class="lineBox" style="width:100px;"><input type="text" id="endTime" class="post-data glb-text" /></div>
+		单号：<div class="lineBox" style="width:100px;"><input type="text" id="id" class="post-data glb-text" /></div>
+	</div>
+	<div class="searchBox">
+		店员 <div class="lineBox" style="width:100px;"><input type="text" id="manager" class="post-data glb-text" /></div>
+		客户 <div class="lineBox" style="width:100px;"><input type="text" id="customer" class="post-data glb-text" /></div>
+		<a id="salesBillingListsearchButton" class='toolBar-a'>搜索</a> <a id='salesBillingListPostBoxCl-button' class='toolBar-a'>清空</a>
+	</div>
+	</div>
+
+	<div id="salesBillingListscrollBox" class="scrollBox">
+	<div class="scrollPanel">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td style="width:100px;">操作</td>
+				<td style="width:150px;" >日期</td>
+				<td style="width:150px; ">小票</td>
+				<td style="width:100px;" >店员</td>
+				<td style="width:100px;" >客户</td>
+				<td style="width:100px;" >数量</td>
+				<td style="width:100px;" >总额</td>
+				<td style="width:100px;" >现金</td>
+				<td style="width:100px;" >刷卡</td>
+				<td style="width:100px;" >汇款</td>
+				<td style="width:600px;" >操作日期</td>
+			</tr>
+		</table>
+		<div id="salesBillingListscrollBoxContent" class="scrollBoxContent" style="height: 410px;overflow: hidden;">
+		<div class="scrollPanelContent" style="float:left;">
+		<table border="0" cellpadding="2" cellspacing="0" id="dataTable">
+			<tr id="salesBillingListmoreTr" style="visibility: hidden;">
+				<td colspan="11" id="salesBillingListmoreButton" style='text-align: center;'>
+					<a class="ui-link">当前（0/0） 点击加载更多..</a>
+				</td>
+			<td>
+		</table>
+		</div>
+		</div>
+	</div>
+	</div>
+	
+<script type="text/javascript" charset="utf-8" src="js/x-ui/ddl.js"></script>
+
+<!--设置UI data-prefetch -->
+<script type="text/javascript">
+	$(function(){
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 2) - 10;
+			$("#scrollBox").height(CXT_HEIGHT);
+			$("#scrollBoxContent").height(CXT_HEIGHT - 50);
+		}
+		resize();
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+
+		// 时间控件
+        var curr = new Date().getFullYear();
+		var opt = {
+		    preset: 'date', //日期
+		    display: 'modal', //显示方式 
+		    mode: 'scroller', //日期选择模式
+		    dateFormat: 'yy-mm-dd', // 日期格式
+		    setText: '确定', //确认按钮名称
+		    cancelText: '取消',//取消按钮名籍我
+		    dateOrder: 'yymmdd', //面板中日期排列格式
+		    dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+		    endYear:2020 //结束年份
+		};
+
+		$("#salesBillingListPostBox #startTime").mobiscroll(opt).date(opt);
+		$("#salesBillingListPostBox #endTime").mobiscroll(opt).date(opt);
+	});
+</script>
+
+<!--移动模块-->
+<script type="text/javascript">
+	// 数据块可以移动
+	var salesBillingListscrollBox,salesBillingListscrollBoxContent;
+	setTimeout(function(){
+		salesBillingListscrollBox = new iScroll('salesBillingListscrollBox',{lockDirection:true,vScroll:false});
+		salesBillingListscrollBox.refresh();
+
+		salesBillingListscrollBoxContent = new iScroll('salesBillingListscrollBoxContent',{lockDirection:true,hScroll:false});
+		salesBillingListscrollBoxContent.refresh();
+	},100);
+</script>
+
+<!--数据绑定-->
+<script type="text/javascript">
+	$(function(){
+		var pagerIndex 		= 1,					// 当前页面
+			currentCount	= 0,					// 当前数据总条数
+			count	   		= 0;					// 数据总条数
+
+		// 获取数据
+		var loadData = function(){
+			$.mobile.loading('show');
+			$('#salesBillingListmoreTr').css({'visibility': 'hidden'});
+			$.ajax({url: SERVER + "SalesForms/GetList?mode=1&token=" + TOKEN + "&page=" + pagerIndex,
+				data:postData($('#salesBillingListPostBox')),
+				type:'post',
+				success: function(data){
+					var result = eval("("+data+")");
+					if(result.Status == 'SUCCESS'){
+						for(var i in result.Result){
+							var item = $('<tr did="'+ result.Result[i].id +'" class="cl-tr">' 	+		
+													'<td style="width:50px;"><input dataid="'+ result.Result[i].id +'" data-role="none" type="checkbox"></td>'+
+												'<td style="width:100px;"><a data-transition="slide" style="color:#0EB2F1;" href="salesBillingEdits.html?id='+ result.Result[i].id +'">修改</a></td>' +
+												'<td style="width:150px;" >'+ result.Result[i].selecttime +'</td>' +  	
+												'<td style="width:150px; ">'+ '<a did="'+ result.Result[i].id +'" class="xp"></a>' +'</td>' + 
+												'<td style="width:100px;" >'+ result.Result[i].manager +'</td>' +  	
+												'<td style="width:100px;" >'+ result.Result[i].customer +'</td>' +  	
+												'<td style="width:100px;" >'+ result.Result[i].counts +'</td>' +  		
+												'<td style="width:100px;" >'+ result.Result[i].amount +'</td>' +  	
+												'<td style="width:100px;" >'+ result.Result[i].cash +'</td>' +  	
+												'<td style="width:100px;" >'+ result.Result[i].card +'</td>' +  	
+												'<td style="width:100px;" >'+ result.Result[i].remit +'</td>' +  	
+												'<td style="width:550px;" >'+ result.Result[i].createtime +'</td>' +  	
+										'</tr>');
+							$('#salesBillingListmoreTr').before(item);
+							item.find('.xp').tap(function(){
+								ShowTicket(SERVER + 'Ticket/GetIdByTicket?token=' + TOKEN + '&id=' + $(this).attr('did'));
+							});
+							currentCount ++;
+
+						}
+						$('#salesBillingListmoreButton a').text('当前（'+ currentCount +'/'+ count +'） 点击加载更多..');
+						if(currentCount > 0){
+							$('#salesBillingListmoreTr').css({'visibility': 'visible'});
+						}
+						if(currentCount == count){
+							$('#salesBillingListmoreButton a').text('当前（'+ currentCount +'/'+ count +'） 没有更多数据了..');
+						}
+					}
+					salesBillingListscrollBox.refresh();
+					salesBillingListscrollBoxContent.refresh();
+					$.mobile.loading('hide');
+				}
+			});
+		}
+		//删除
+		$('#salesBillingOrderListDelete').tap(function(){
+				var ids = '';
+				$.mobile.loading('show');
+
+				$('input[type="checkbox"]').each(function(){
+					if($(this).prop('checked')){
+						//ids = ids + $(this).attr('dataid') + ',';
+						if(ids.length<1)
+						{
+							ids=$(this).attr('dataid');
+						}else
+						{
+							ids=$(this).attr('dataid')+ ','+ids;
+						}
+					}
+				});
+				console.log(ids);
+				
+
+				$.get(SERVER + "SalesForms/Delete?token=" + TOKEN + "&id=" + ids,function(data){
+					var r = eval("("+ data +")");
+					console.log(r);
+					$('input[type="checkbox"]').each(function(){
+						if($(this).prop('checked')){
+							$(this).parent().parent().hide();
+						}
+					});
+					alert(r.Status,r.Message);
+				});
+			});
+
+		// 点击加载更多数据
+		$('#salesBillingListmoreButton').tap(function(){
+			if(currentCount == count && count != 0){
+				return;
+			}
+			pagerIndex ++;
+			loadData();
+		});
+
+		// 获取数据总条数
+		$.get(SERVER + "SalesForms/GetCounts?mode=1&token=" + TOKEN,function(data){
+			var result = eval("("+data+")");
+			if(result.Status == 'ERROR'){
+				alert(result.Status,result.Message);
+				return;
+			}
+			count = result.Result;
+		});
+
+		// 搜索
+		$('#salesBillingListsearchButton').tap(function(){
+			pagerIndex = 1;
+			currentCount = 0;
+			$('.cl-tr').remove();
+			loadData();
+			return false;
+		});
+
+		// 开启定时器，延时加载
+		setTimeout(function(){
+			loadData();
+		},100);
+
+		// 清空
+		$('#salesBillingListPostBoxCl-button').tap(function(){
+			$('#salesBillingListPostBox input').val('');
+		});
+	});
+</script>
+</body>
+</html>

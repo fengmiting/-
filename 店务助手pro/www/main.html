@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+	<link href="css/default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		p{padding:10px 0px; font-size: 18px;}
+		td{padding-right: 30px; font-size: 18px;}
+	</style>
+	<div id="WelcomeBox" style="padding:10px;">
+		<P>欢迎登录!</P>
+		<P>今日承诺还款客户：</P>
+		<table id="HKTB">
+
+		</table>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			setTimeout(function(){
+				$.mobile.loading('show');
+				$.get(SERVER + "Customer/GetListByRepayment?token=" + TOKEN,function(data){
+					var x = eval("("+ data +")");
+					for(var i in x){
+						var tr = '<tr>' +
+									'<td>'+ x[i].customerName +'</td>' +
+									'<td>'+ x[i].balance +'</td>' +
+								  '</tr>';
+						$('#HKTB').append(tr);
+					}
+				});
+			},100);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<div class="toolBar">
+		<a id='editUserEditSave' class="toolBar-a">保存</a>
+		<a data-add-back-btn="true" class="toolBar-a goBack"><span>« </span>返回</a>
+	</div>
+
+	<div class="editBox" style="background-color:#f9f9f9;" id='editUserEditAddPostBox'>
+		<div class="editItem">
+			<span class="edit-title">登录工号</span>
+			<div class="input-box"><input readonly="readonly" id='loginName' class="post-data glb-text" type="text" /></div>
+			<span class="prompt">请使用店面简拼加编号，如：HES001 </span>
+		</div>
+		<div class="editItem">
+			<span class="edit-title">新密码</span>
+			<div class="input-box"><input  id='passWord' class="post-data glb-text"  type="password" /></div>
+		</div>
+	</div>
+ 
+<script type="text/javascript">
+	$(function(){
+		$(".goBack").tap(function(){
+			window.history.back();
+		});
+
+		setTimeout(function(){
+			$("#editUserEditAddPostBox #loginName").val($.Request("id"));
+		},300);
+
+		// 添加数据
+		$("#editUserEditSave").tap(function(){
+
+			// Ajax 操作
+			$.mobile.loading('show');
+ 
+			$.ajax({url: SERVER + "Users/Edit?token=" + TOKEN,
+				data:postData($('#editUserEditAddPostBox')),
+				type:'post',
+				success: function(data){
+					var result = eval("("+data+")");
+					alert(result.Status,result.Message);
+					$.mobile.loading('hide');
+				}
+			});
+
+		});
+	});
+</script>
+</body>
+</html> 

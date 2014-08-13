@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<div class="toolBar">
+		<a class="toolBar-a" id="imageListSaveButton">确定开单</a>
+		<a class="toolBar-a" id="imageListClearButton">清空购物车</a>
+		<a class="toolBar-a goBack"><span>« </span>返回</a>
+	</div>
+
+	<div id="imageListscrollBox" class="scrollBox" style="padding:20px 8px; overflow:hidden;">
+		<div class="scrollPanel" style="padding-bottom:400px;">
+			<div style="visibility: hidden;" class="more-product">更多商品</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		// 设置高度
+		var resize = function(){
+			var CXT_HEIGHT = $(window).height() - 41 - 48 - 10;
+			$("#imageListscrollBox").height(CXT_HEIGHT);
+		}
+		resize();
+
+		// 浏览器改变大小自动重新设置高度
+		$(window).resize(function(){
+			resize();
+		});
+
+		//数据块可以移动
+		var imageListpScroll;
+		setTimeout(function(){
+			imageListpScroll = new iScroll('imageListscrollBox');
+			imageListpScroll.refresh();
+		},100);
+
+		// 返回
+		$(".goBack").tap(function(){
+		    window.history.back();
+		    return false;
+		});
+
+		$(document).bind( "pageshow", function( event, prevPage){
+			if(imageListpScroll !== undefined){
+				imageListpScroll.refresh();
+			}
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(function(){
+			var PAGE 	= 1,
+				COUNT	= 0,
+				CURRENT = 0,
+				LIST 	= {};
+
+			$.get(SERVER + "Product/GetListCount?token=" + TOKEN,function(data){
+				var rsl = eval("("+ data +")");
+				COUNT 	= rsl.Result;
+			});
+
+			function setCounts(){
+				var arr = [];
+				console.log(CartList);
+				for(var i in CartList){
+					$('.showsize-box').each(function(){
+						var count = 0;
+						if($(this).attr('val') == i){
+							for(var x in CartList[i]){
+								count += CartList[i][x].count;
+							}
+						}
+
+						if(count > 0){
+							var h = {
+								elem : $(this),
+								count: count
+							}
+							arr.push(h);
+						}else{
+							$(this).hide();
+						}
+					});
+				}
+
+				for(var s in arr){
+					if(arr[s].count > 0){
+						arr[s].elem.html(arr[s].count).show();
+					}
+				}
+			}
+
+			var GetData = function(){
+				$.mobile.loading('show');
+				$.ajax({url: SERVER + "Product/GetImageList?page="+ PAGE +"&token=" + TOKEN,
+					data: {},
+					type: 'post',
+					success: function(data){
+						var rsl 	= eval("("+ data +")"),
+							list 	= rsl.Result;
+
+						for(var i in list){
+							CURRENT 	+= 1;
+							var imgs 	= list[i].images.split(',');
+							var html 	= $('<div class="imageList-box">' 	+
+												'<div val="'+ list[i].id +'" id="sk'+ list[i].id +'" class="showsize-box"></div>' 	+
+								 				'<img imgs="'+ list[i].images +'" src="'+ IMGWEB + imgs[0] +'" />'+
+								 				'<p>货品：'+ list[i].name +'</p>'+
+								 				'<p>款号：'+ list[i].code +'</p>'+
+								 				'<a key="'+ list[i].id +'">加入购物车</a>' +
+								 				'<p class="pric">￥'+ list[i].zeroGrantPrice +'</p>' +
+								 			'</div>');
+							LIST[list[i].id] = list[i];
+							$('a',html).tap(function(){
+								var key   = $(this).attr('key');
+									panel = $('#sk' + $(this).attr('key'));
+
+								CartBox(LIST[$(this).attr('key')],function(obj){
+ 									if(obj == null || obj === undefined) return false;
+
+ 									if(obj.color === undefined || obj.color.length <= 0){
+ 										alert('错误','错误，未选择颜色');
+ 										return false;
+ 									}
+
+ 									if(obj.size === undefined || obj.size.length <= 0){
+ 										alert('错误','错误，未选择尺码');
+ 										return false;
+ 									}
+
+ 									if(CartList[key] === undefined){
+ 										CartList[key] 		= {};
+ 										CartList[key][0]	= obj;
+ 									}else{
+ 										var x = 0,
+ 											t = 0;
+ 										for(var i in CartList[key]){
+ 											if(CartList[key][i].color == obj.color && CartList[key][i].size == obj.size){
+ 												CartList[key][i].count = obj.count;
+ 												t = 1;
+ 												break;
+ 											}
+ 											x ++;
+ 										}
+ 										
+ 										if(t == 0) CartList[key][x] = obj;
+ 									}
+ 									//panel.html(obj.count).show();
+ 									setCounts();
+									return false;
+								});
+							});
+
+							$('img',html).tap(function(){
+								ImgBox($(this).attr('imgs').split(','));
+							});
+							html.insertBefore('#imageListscrollBox .scrollPanel .more-product');
+							$('.more-product').css({'visibility':'inherit'});
+						}
+						imageListpScroll.refresh();
+						$.mobile.loading('hide');
+						setCounts();
+					}
+				});
+			}
+
+			setTimeout(function(){
+				GetData();
+			},100);
+
+			$('.more-product').tap(function(){
+				$(this).css({'visibility':'hidden'});
+				if(CURRENT >= COUNT){
+					return;
+				}
+
+				PAGE += 1;
+				GetData();
+			});
+
+			$('#imageListClearButton').tap(function(){
+				CartList = {};
+				$('.showsize-box').hide();
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$('#imageListSaveButton').tap(function(){
+			var count  = 12;
+			var length = 1;
+			for(var i in CartList){
+				if(length > count){
+					alert('错误','货品超长');
+					return false;
+				}
+				length ++ ;
+			}
+			$.mobile.changePage("salesBillingAdd.html?v=1","slide");
+		});
+	</script>
+</body>
+</html>

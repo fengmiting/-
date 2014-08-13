@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<script type="text/javascript">uiOPT();</script>
+	<div class="toolBar">
+		<a class="toolBar-a" data-transition="slide" href="customerList.html">客户查询</a>
+		<a class="toolBar-a" data-transition="slide" href="customerAdd.html">新增客户</a>
+		<a class="toolBar-a" data-transition="slide" href="customerBill.html">客户账款</a>
+		<a class="toolBar-a toolBar-a-checked" data-transition="slide" href="firmList.html">厂商查询</a>
+		<a class="toolBar-a" data-transition="slide" href="firmAdd.html">新增厂商</a>
+		<a class="toolBar-a" id="firmListDelete">删除选中</a>
+	</div>
+
+	<div id='customerListPostBox'>
+	<div class="searchBox" id="firmListSearchBox">
+		名称：<div class="lineBox"><input type="text" id="firm" class="post-data glb-text" /></div>
+		手机：<div class="lineBox"><input type="text" id="phone" class="post-data glb-text" /></div>
+		<a id="firmListSearchButton" class='toolBar-a'>搜索</a> <a class='toolBar-a'>清空</a>
+	</div>
+	</div>
+
+	<div id="firmListscrollBox" class="scrollBox">
+	<div class="scrollPanel">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr class="th">
+				<td style="width:80px;" >选择</td>
+				<td style="width:80px;" >序号</td>
+				<td style="width:200px;">名称</td>
+				<td style="width:100px;">店员</td>
+				<td style="width:150px;">手机</td>
+				<td style="width:350px;">地址</td>
+				<td style="width:200px;">备注</td>
+			</tr>
+		</table>
+		<div id="firmListscrollBoxContent" class="scrollBoxContent">
+		<div class="scrollPanelContent" style="float:left;">
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr id="firmListmoreTr" style="visibility: hidden;">
+				<td colspan="9" id="firmListmoreButton" class='moreButton'>
+					<a class="ui-link">当前（0/0） 点击加载更多..</a>
+				</td>
+			<td>
+		</table>
+		</div>
+		</div>
+	</div>
+	</div>
+
+	<!--设置UI-->
+	<script type="text/javascript">
+		$(function(){
+			// 设置高度
+			var resize = function(){
+				var CXT_HEIGHT = $(window).height() - 41 - 48 - (48 * 2) - 10;
+				$("#firmListscrollBox").height(CXT_HEIGHT);
+				$("#firmListscrollBoxContent").height(CXT_HEIGHT - 50);
+			}
+			resize();
+
+			// 浏览器改变大小自动重新设置高度
+			$(window).resize(function(){
+				resize();
+			});
+		});
+	</script>
+
+	<!--移动模块-->
+	<script type="text/javascript">
+		// 数据块可以移动
+		var pScroll,cScroll;
+		setTimeout(function(){
+			pScroll = new iScroll('firmListscrollBox',{lockDirection:true,vScroll:false});
+			pScroll.refresh();
+
+			cScroll = new iScroll('firmListscrollBoxContent',{lockDirection:true,hScroll:false});
+			cScroll.refresh();
+		},100);
+	</script>
+
+	<!--Ajax获取数据-->
+	<script type="text/javascript">
+		$(function(){
+
+			var pagerIndex 		= 1,					// 当前页面
+				currentCount	= 0,					// 当前数据总条数
+				count	   		= 0;					// 数据总条数
+
+			var getList = function(){
+				$.mobile.loading('show');
+				$.ajax({url: SERVER + "Firm/GetList?token=" + TOKEN + "&page=" + pagerIndex,
+					data:postData($('#firmListSearchBox')),
+					type:'post',
+					success: function(data){
+						var result = eval("("+data+")");
+						if(result.Status == 'SUCCESS'){
+							for(var i in result.Result){
+								var item = $('<tr class="cl-tr">' +
+												'<td style="width:80px;"><input dataid="'+ result.Result[i].id +'" data-role="none" type="checkbox"></td>'+
+												'<td style="width:80px;" >'+ result.Result[i].id +'</td>'					+
+												'<td style="width:200px;">'+ result.Result[i].firm +'</td>'					+
+												'<td style="width:100px;">'+ result.Result[i].clerk +'</td>'				+
+												'<td style="width:150px;">'+ result.Result[i].phone +'</td>'				+
+												'<td style="width:350px;">'+ result.Result[i].address +'</td>'				+
+												'<td style="width:200px;">'+ result.Result[i].remark +'</td>'				+
+											 '</tr>');
+								$('#firmListmoreTr').before(item);
+								$(item).tap(function(){
+									var cbox = $(this).find('input');
+									if(cbox.is(":checked")){
+									    cbox.prop("checked", false);
+									}
+									else{
+									    cbox.prop("checked", true);
+									}
+									return false;
+								});
+								currentCount ++;
+							}
+							pScroll.refresh();
+							cScroll.refresh();
+						}
+						$.mobile.loading('hide')
+					}
+				});
+
+			}
+
+			$('#firmListSearchButton').tap(function(){
+				$('.cl-tr').remove();
+				getList();
+			});
+
+			setTimeout(function(){
+				getList();
+			},100)
+
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(function(){
+			$('#firmListDelete').tap(function(){
+				var ids = '';
+				$.mobile.loading('show');
+
+				$('input[type="checkbox"]').each(function(){
+					if($(this).prop('checked')){
+						ids = ids + $(this).attr('dataid') + ',';
+					}
+				});
+
+				$.get(SERVER + "Firm/Delete?token=" + TOKEN + "&id=" + ids,function(data){
+					var r = eval("("+ data +")");
+					
+					$('input[type="checkbox"]').each(function(){
+						if($(this).prop('checked')){
+							$(this).parent().parent().hide();
+						}
+					});
+
+					alert(r.Status,r.Message);
+				});
+			});
+		});
+	</script>
+</body>
+</html>

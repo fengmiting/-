@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+	<div class="toolBar">
+		<a id='firmSave' class="toolBar-a">保存</a>
+		<a data-add-back-btn="true" class="toolBar-a goBack" id="goBack"><span>« </span>返回</a>
+	</div>
+
+	<div class="editBox" style="background-color:#f9f9f9;" id="brandAddPostBox">
+		<div class="editItem">
+			<span class="edit-title">品牌*</span>
+			<div class="input-box"><input id='brand' class="post-data glb-text" data-clear-btn="true" type="text" /></div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	$(function(){
+		$(".goBack").tap(function(){
+			window.history.back();
+		});
+
+		// 添加数据
+		$("#firmSave").tap(function(){
+
+			// Ajax 操作
+			$.mobile.loading('show');
+			$.ajax({url: SERVER + "Brand/Add?token=" + TOKEN,
+				data:postData($('#brandAddPostBox')),
+				type:'post',
+				success: function(data){
+					var result = eval("("+data+")");
+					if(result.Status == 'SUCCESS'){
+						window.history.back();
+					}
+					$.mobile.loading('hide');
+				}
+			});
+
+		});
+	});
+</script>
+</body>
+</html> 
